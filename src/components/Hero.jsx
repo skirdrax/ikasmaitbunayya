@@ -44,7 +44,7 @@ export default function Hero({ onSearchResult }) {
     <section className="hero" id="beranda">
       <div className="hero-inner">
         <div className="hero-content">
-          <div className="eyebrow">Ikatan Alumni SMAIT Bunayya</div>
+          <div className="eyebrow">Ikatan Alumni SMA IT Bunayya</div>
 
           <div className="search-wrapper">
             <form className="search-bar" onSubmit={handleSearchSubmit}>
@@ -116,7 +116,7 @@ export default function Hero({ onSearchResult }) {
           </h1>
 
           <p className="lead">
-            Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMAIT Bunayya
+            Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya
             dari setiap angkatan — tersebar di seluruh Indonesia
           </p>
 

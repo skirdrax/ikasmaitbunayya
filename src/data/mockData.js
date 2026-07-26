@@ -68,10 +68,6 @@ export const batches = [
   { id: 2, label: 'Angkatan 2', tahun: 2013, jumlah: 34 },
   { id: 3, label: 'Angkatan 3', tahun: 2014, jumlah: 40 },
   { id: 4, label: 'Angkatan 4', tahun: 2015, jumlah: 46 },
-  { id: 5, label: 'Angkatan 5', tahun: 2016, jumlah: 34 },
-  { id: 6, label: 'Angkatan 6', tahun: 2017, jumlah: 40 },
-  { id: 7, label: 'Angkatan 7', tahun: 2018, jumlah: 46 },
-  { id: 8, label: 'Angkatan 8', tahun: 2019, jumlah: 52 },
 ];
 
 // ============ DATA ALUMNI ============

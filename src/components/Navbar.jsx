@@ -13,7 +13,7 @@ export default function Navbar() {
             </svg>
           </div>
           <div>
-            IKA Bunayya
+            IKA SMA IT Bunayya
             <small>Ikatan Alumni</small>
           </div>
         </div>

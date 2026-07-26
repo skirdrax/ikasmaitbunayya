@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { students } from '../data/mockData.js';
 
 export default function Hero({ onSearchResult }) {
@@ -6,6 +6,58 @@ export default function Hero({ onSearchResult }) {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
+  // ===== COUNTER ANIMASI =====
+  const [counts, setCounts] = useState({ alumni: 0, lulus: 0, kota: 0 });
+  const counterRef = useRef(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const targetAlumni = 50;
+    const targetLulus = 100;
+    const targetKota = 10;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated.current) {
+            hasAnimated.current = true;
+
+            const duration = 2000;
+            const startTime = Date.now();
+
+            const animateCounter = () => {
+              const now = Date.now();
+              const progress = Math.min((now - startTime) / duration, 1);
+
+              // Ease out cubic
+              const ease = 1 - Math.pow(1 - progress, 3);
+
+              setCounts({
+                alumni: Math.round(ease * targetAlumni),
+                lulus: Math.round(ease * targetLulus),
+                kota: Math.round(ease * targetKota),
+              });
+
+              if (progress < 1) {
+                requestAnimationFrame(animateCounter);
+              }
+            };
+
+            animateCounter();
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // ===== SEARCH =====
   const handleSearch = (e) => {
     const value = e.target.value;
     setQuery(value);
@@ -120,17 +172,18 @@ export default function Hero({ onSearchResult }) {
             dari setiap angkatan — tersebar di seluruh Indonesia
           </p>
 
-          <div className="counters">
+          {/* COUNTERS DENGAN ANIMASI */}
+          <div className="counters" ref={counterRef}>
             <div className="counter-card">
-              <div className="num">1.200+</div>
+              <div className="num">{counts.alumni.toLocaleString()}+</div>
               <div className="label">Alumni Terdaftar</div>
             </div>
             <div className="counter-card">
-              <div className="num">100%</div>
-              <div className="label">Lulus PTN / Kedinasan</div>
+              <div className="num">{counts.lulus}%</div>
+              <div className="label">Lolos PTN </div>
             </div>
             <div className="counter-card">
-              <div className="num">50+</div>
+              <div className="num">{counts.kota}+</div>
               <div className="label">Kota Sebaran</div>
             </div>
           </div>

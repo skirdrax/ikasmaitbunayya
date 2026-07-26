@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import MapSection from './components/MapSection';
 import BatchDirectory from './components/BatchDirectory';
 import GallerySection from './components/GallerySection';
-import DonationSection from './components/DonationSection';
+import KampusAlumni from './components/KampusAlumni'; // ← GANTI
 import NewsSection from './components/NewsSection';
 import StudentOverlay from './components/StudentOverlay';
 import ProfileModal from './components/ProfileModal';
@@ -27,9 +27,8 @@ function App() {
       <BatchDirectory onSelectBatch={setSelectedBatch} />
       <GallerySection />
       <NewsSection />
-      <DonationSection />
+      <KampusAlumni /> {/* ← GANTI */}
       <Footer />
-
       {selectedBatch && (
         <StudentOverlay
           batchId={selectedBatch}
@@ -37,7 +36,6 @@ function App() {
           onSelectStudent={setSelectedStudent}
         />
       )}
-
       {selectedStudent && (
         <ProfileModal
           student={selectedStudent}

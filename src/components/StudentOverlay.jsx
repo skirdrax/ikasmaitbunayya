@@ -1,19 +1,8 @@
-import { useState } from 'react';
 import { batches, students } from '../data/mockData.js';
 
-const filters = [
-  { key: 'semua', label: 'Semua' },
-  { key: 'kuliah', label: 'Kuliah PTN/PTS' },
-  { key: 'bekerja', label: 'Bekerja' },
-  { key: 'wirausaha', label: 'Wirausaha' },
-];
-
 export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
-  const [activeFilter, setActiveFilter] = useState('semua');
-
   const batch = batches.find((b) => b.id === batchId);
   const studentsByBatch = students.filter((s) => s.angkatan === batch?.tahun);
-  const filteredStudents = studentsByBatch;
 
   return (
     <div className="overlay show">
@@ -39,24 +28,15 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           <div>
             <h2>Daftar Murid — {batch?.label}</h2>
             <p>
-              Lulus tahun {batch?.tahun} · {filteredStudents.length} alumni
+              Lulus tahun {batch?.tahun} · {studentsByBatch.length} alumni
             </p>
           </div>
         </div>
 
-        <div className="filters">
-          {filters.map((f) => (
-            <button
-              key={f.key}
-              className={`filter-btn ${activeFilter === f.key ? 'active' : ''}`}
-              onClick={() => setActiveFilter(f.key)}>
-              {f.label}
-            </button>
-          ))}
-        </div>
+        {/* FILTER DIHAPUS */}
 
         <div className="student-grid">
-          {filteredStudents.map((s) => (
+          {studentsByBatch.map((s) => (
             <div className="student-card" key={s.id}>
               <div className="student-photo">
                 <img src={s.foto} alt={s.nama} />

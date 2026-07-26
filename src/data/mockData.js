@@ -100,6 +100,7 @@ export const students = [
     angkatan: 2012,
     foto: 'https://ui-avatars.com/api/?name=Rizky+Pratama&background=1A4D3E&color=F7F5F0&size=160',
   },
+
   {
     id: 4,
     nama: 'Nabila Utami',

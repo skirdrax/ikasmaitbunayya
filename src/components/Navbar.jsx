@@ -13,8 +13,8 @@ export default function Navbar() {
             </svg>
           </div>
           <div>
-            IKA SMA IT Bunayya
-            <small>Ikatan Alumni</small>
+            IKA SMANAYA
+            <small>Ikatan Alumni SMA IT BUNAYYA</small>
           </div>
         </div>
 
@@ -24,8 +24,8 @@ export default function Navbar() {
           </a>
           <a href="#peta">Peta Sebaran</a>
           <a href="#direktori">Direktori</a>
-          <a href="#galeri">Galeri</a>
-          <a href="#kontak">Kontak</a>
+          <a href="#manfaat">Manfaat</a> {/* ← TAMBAH */}
+          <a href="#kampus">Kampus Alumni</a>
         </div>
 
         <div className="nav-right">
@@ -43,8 +43,8 @@ export default function Navbar() {
           <a href="#beranda">Beranda</a>
           <a href="#peta">Peta Sebaran</a>
           <a href="#direktori">Direktori</a>
-          <a href="#galeri">Galeri</a>
-          <a href="#kontak">Kontak</a>
+          <a href="#manfaat">Manfaat</a> {/* ← TAMBAH */}
+          <a href="#kampus">Kampus Alumni</a>
           <button className="btn btn-join">Gabung</button>
         </div>
       )}

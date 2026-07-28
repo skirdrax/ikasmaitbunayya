@@ -1,0 +1,76 @@
+/* ===== DONATION ===== */
+.donation {
+  background: var(--forest);
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.donation-text {
+  position: relative;
+  color: #fff;
+}
+.donation-text .eyebrow {
+  color: var(--gold);
+}
+.donation-text .eyebrow::before,
+.donation-text .eyebrow::after {
+  background: var(--gold);
+}
+.donation-text h2 {
+  color: #fff;
+  font-size: clamp(24px, 2.8vw, 34px);
+}
+.donation-text p {
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.donation-panel {
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  backdrop-filter: blur(4px);
+}
+.donation-panel .goal {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.donation-panel .goal b {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--gold);
+}
+.progress-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 999px;
+}
+.donation-panel .sub {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12.5px;
+  margin-top: 8px;
+}
+.donation-panel .btn {
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}

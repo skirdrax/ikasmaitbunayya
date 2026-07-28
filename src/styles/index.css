@@ -1,0 +1,19 @@
+/* ======================================== */
+/* ===== MAIN CSS ===== */
+/* ======================================== */
+
+@import './variables.css';
+@import './base.css';
+@import './components/navbar.css';
+@import './components/hero.css';
+@import './components/map.css';
+@import './components/directory.css';
+@import './components/gallery.css';
+@import './components/donation.css';
+@import './components/news.css';
+@import './components/kampus.css';
+@import './components/overlay.css';
+@import './components/modal.css';
+@import './components/footer.css';
+@import './responsive.css';
+@import './components/manfaat.css'; /* ← TAMBAH */

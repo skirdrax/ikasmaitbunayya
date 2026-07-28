@@ -1,0 +1,157 @@
+/* ======================================== */
+/* ===== MAP SECTION ===== */
+/* ======================================== */
+
+.map-simple {
+  position: relative;
+  background: #e8f0fe;
+  border-radius: 16px;
+  padding: 30px 20px 20px;
+  min-height: 420px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow);
+}
+
+.map-title {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a4d3e;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.map-grid {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background:
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(26, 77, 62, 0.03) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 50%,
+      rgba(26, 77, 62, 0.03) 0%,
+      transparent 50%
+    );
+}
+
+.map-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.map-point-dot {
+  width: 16px;
+  height: 16px;
+  background: #c9a96e;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.map-point:hover .map-point-dot {
+  transform: scale(1.4);
+  background: #d4893b;
+}
+
+.map-point-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: #1a4d3e;
+  text-align: center;
+  margin-top: 4px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+.map-point-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-size: 12px;
+  color: #4a4a4a;
+  min-width: 160px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.map-point-tooltip strong {
+  color: #1a4d3e;
+  font-size: 14px;
+}
+
+.map-point:hover .map-point-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.map-legend-simple {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c9a96e;
+  display: inline-block;
+}
+
+.intl-strip {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.intl-chip {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a4d3e;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.25s ease;
+}
+
+.intl-chip:hover {
+  background: #f5efe4;
+}
+
+.intl-chip .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9a96e;
+}

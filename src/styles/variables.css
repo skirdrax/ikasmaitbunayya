@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+
+:root {
+  --forest: #1a4d3e;
+  --forest-hover: #2a6b56;
+  --forest-light: #e8f0ec;
+  --gold: #c9a96e;
+  --gold-metal: #b8944f;
+  --gold-light: #f5efe4;
+  --orange: #d4893b;
+  --orange-hover: #b87830;
+  --orange-light: #f5ede4;
+  --bg: #ffffff;
+  --card: #ffffff;
+  --card-hover: #fafafa;
+  --ink: #1a1a1a;
+  --ink-soft: #4a4a4a;
+  --ink-light: #8a8a8a;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-lift: 0 14px 28px rgba(26, 77, 62, 0.1);
+  --serif: 'Playfair Display', serif;
+  --sans: 'Inter', sans-serif;
+  --transition: 0.25s ease;
+}

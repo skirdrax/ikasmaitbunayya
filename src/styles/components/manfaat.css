@@ -1,0 +1,67 @@
+/* ======================================== */
+/* ===== MANFAAT IKA ===== */
+/* ======================================== */
+
+.manfaat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.manfaat-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all var(--transition);
+}
+
+.manfaat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--gold);
+}
+
+.manfaat-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.manfaat-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+  font-family: var(--sans);
+}
+
+.manfaat-card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== RESPONSIVE MANFAAT ===== */
+@media (max-width: 640px) {
+  .manfaat-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .manfaat-card {
+    padding: 24px 20px;
+  }
+
+  .manfaat-icon {
+    font-size: 36px;
+  }
+
+  .manfaat-card h3 {
+    font-size: 17px;
+  }
+}

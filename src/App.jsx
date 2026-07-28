@@ -3,13 +3,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MapSection from './components/MapSection';
 import BatchDirectory from './components/BatchDirectory';
-import GallerySection from './components/GallerySection';
-import KampusAlumni from './components/KampusAlumni'; // ← GANTI
-import NewsSection from './components/NewsSection';
+import ManfaatIKA from './components/ManfaatIKA'; // ← SUDAH BENAR
+import KampusAlumni from './components/KampusAlumni';
 import StudentOverlay from './components/StudentOverlay';
 import ProfileModal from './components/ProfileModal';
 import Footer from './components/Footer';
-import './index.css';
+import './styles/index.css';
 
 function App() {
   const [selectedBatch, setSelectedBatch] = useState(null);
@@ -25,9 +24,8 @@ function App() {
       <Hero onSearchResult={handleSearchResult} />
       <MapSection />
       <BatchDirectory onSelectBatch={setSelectedBatch} />
-      <GallerySection />
-      <NewsSection />
-      <KampusAlumni /> {/* ← GANTI */}
+      <ManfaatIKA /> {/* ← SUDAH BENAR (GANTI GallerySection) */}
+      <KampusAlumni />
       <Footer />
       {selectedBatch && (
         <StudentOverlay

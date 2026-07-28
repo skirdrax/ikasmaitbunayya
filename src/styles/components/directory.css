@@ -1,0 +1,90 @@
+/* ===== DIRECTORY ===== */
+.directory-section {
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.batch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 28px;
+}
+
+.batch-card {
+  background: #f8f8f8;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.batch-card:hover {
+  transform: translateY(-6px);
+  background: #ffffff;
+  box-shadow: var(--shadow-lift);
+}
+
+.batch-photo {
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+}
+.batch-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.batch-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(26, 77, 62, 0.4) 100%
+  );
+}
+
+.batch-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--gold);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.batch-body {
+  padding: 20px 22px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.batch-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.batch-stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.batch-stats b {
+  color: var(--ink);
+  display: block;
+  font-size: 16px;
+  font-family: var(--serif);
+}
+.batch-body .btn {
+  margin-top: 18px;
+  align-self: flex-start;
+}

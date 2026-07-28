@@ -1,84 +1,110 @@
 export default function KampusAlumni() {
   const kampusList = [
     {
-      nama: 'Universitas Indonesia',
-      logo: 'https://cdn.simpleicons.org/linux/000000',
-    },
-    {
-      nama: 'Institut Teknologi Bandung',
-      logo: 'https://cdn.simpleicons.org/ubuntu/E95420',
-    },
-    {
-      nama: 'Universitas Gadjah Mada',
-      logo: 'https://cdn.simpleicons.org/debian/A81D33',
-    },
-    {
-      nama: 'Universitas Airlangga',
-      logo: 'https://cdn.simpleicons.org/redhat/EE0000',
-    },
-    {
-      nama: 'Institut Teknologi Sepuluh Nopember',
-      logo: 'https://cdn.simpleicons.org/fedora/294172',
-    },
-    {
-      nama: 'UIN Syarif Hidayatullah',
-      logo: 'https://cdn.simpleicons.org/archlinux/1793D1',
+      nama: 'Universitas Brawijaya',
+      logo: '/assets/kampus/UB.png',
     },
     {
       nama: 'Universitas Padjadjaran',
-      logo: 'https://cdn.simpleicons.org/centos/262577',
+      logo: '/assets/kampus/UNPAD.png',
     },
     {
-      nama: 'Universitas Brawijaya',
-      logo: 'https://cdn.simpleicons.org/opensuse/73BA25',
+      nama: 'Institut pertanian Bogor',
+      logo: '/assets/kampus/IPB.png',
     },
     {
-      nama: 'Universitas Diponegoro',
-      logo: 'https://cdn.simpleicons.org/gentoo/54487A',
+      nama: 'Universitas Negeri Sebelas Maret',
+      logo: '/assets/kampus/UNS.png',
+    },
+
+    {
+      nama: 'UUniversitas Negeri Jakarta',
+      logo: '/assets/kampus/UNJ.png',
     },
     {
-      nama: 'Universitas Hasanuddin',
-      logo: 'https://cdn.simpleicons.org/freebsd/AB2B28',
+      nama: 'Universitas Sultan Ageng Tirtayasa',
+      logo: '/assets/kampus/UNTIRTA.png',
     },
     {
-      nama: 'Universitas Andalas',
-      logo: 'https://cdn.simpleicons.org/android/3DDC84',
+      nama: 'Universitas jendral Soedirman',
+      logo: '/assets/kampus/UNSOED.png',
     },
     {
-      nama: 'Universitas Sriwijaya',
-      logo: 'https://cdn.simpleicons.org/apple/000000',
+      nama: 'Universitas Siliwangi',
+      logo: '/assets/kampus/UNSIL.png',
+    },
+
+    {
+      nama: 'Universitas Negeri Lampung',
+      logo: '/assets/kampus/UNILA.png',
     },
     {
-      nama: 'Universitas Sumatera Utara',
-      logo: 'https://cdn.simpleicons.org/windows/0078D4',
+      nama: 'Institut Seni Budaya Bandung',
+      logo: '/assets/kampus/ISBI.png',
     },
     {
-      nama: 'Universitas Mulawarman',
-      logo: 'https://cdn.simpleicons.org/googlechrome/4285F4',
+      nama: 'UIN Jakarta',
+      logo: '/assets/kampus/UINJ.png',
     },
     {
-      nama: 'Universitas Riau',
-      logo: 'https://cdn.simpleicons.org/firefox/FF7139',
+      nama: 'UIN Bandung',
+      logo: '/assets/kampus/UINB.png',
     },
     {
-      nama: 'Universitas Jenderal Soedirman',
-      logo: 'https://cdn.simpleicons.org/opera/FF1B2D',
+      nama: 'UIN Purwokerto',
+      logo: '/assets/kampus/UINP.png',
     },
     {
-      nama: 'Universitas Sebelas Maret',
-      logo: 'https://cdn.simpleicons.org/safari/000000',
+      nama: 'Politeknik Negeri Malang',
+      logo: '/assets/kampus/POLINEMA.png',
     },
     {
-      nama: 'Universitas Negeri Jakarta',
-      logo: 'https://cdn.simpleicons.org/microsoftedge/0078D7',
+      nama: 'Politeknik Negeri Indramayu',
+      logo: '/assets/kampus/POLINDRA.png',
     },
     {
-      nama: 'Universitas Negeri Malang',
-      logo: 'https://cdn.simpleicons.org/brave/FB542B',
+      nama: 'Politeknik Negeri Batam',
+      logo: '/assets/kampus/POLIBATAM.png',
     },
     {
-      nama: 'Universitas Negeri Surabaya',
-      logo: 'https://cdn.simpleicons.org/vivaldi/EF3939',
+      nama: 'Politeknik Negeri Media Kreatif',
+      logo: '/assets/kampus/POLIMEDIA.png',
+    },
+    {
+      nama: 'Politeknik Negeri Lampung',
+      logo: '/assets/kampus/POLINELA.png',
+    },
+    {
+      nama: 'Politeknik Negeri Jember',
+      logo: '/assets/kampus/POLIJE.png',
+    },
+    {
+      nama: 'Politeknik Negeri Banyuwangi',
+      logo: '/assets/kampus/POLIWANGI.png',
+    },
+    {
+      nama: 'Universitas Pertamina',
+      logo: '/assets/kampus/UPER.png',
+    },
+    {
+      nama: 'Telkom University',
+      logo: '/assets/kampus/TELKOM.png',
+    },
+    {
+      nama: 'Universitas Pancasila',
+      logo: '/assets/kampus/UP.png',
+    },
+    {
+      nama: 'Universitas Esa Unggul',
+      logo: '/assets/kampus/EU.png',
+    },
+    {
+      nama: 'Global Institute University',
+      logo: '/assets/kampus/GLO.png',
+    },
+    {
+      nama: 'Politeknik Kirana',
+      logo: '/assets/kampus/PK.png',
     },
   ];
 
@@ -89,7 +115,7 @@ export default function KampusAlumni() {
           <div className="eyebrow orange">Kampus Alumni</div>
           <h2>Alumni Tersebar di Berbagai Kampus</h2>
           <p>
-            Alumni SMAIT Bunayya melanjutkan studi ke berbagai universitas
+            Alumni SMA IT Bunayya melanjutkan studi ke berbagai universitas
             ternama di seluruh Indonesia
           </p>
         </div>

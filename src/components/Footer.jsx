@@ -14,14 +14,14 @@ export default function Footer() {
               </svg>
             </div>
             <div>
-              IKA Bunayya
+              IKA SMANAYA
               <small
                 style={{
                   color: '#c9a96e',
                   fontSize: '10px',
                   display: 'block',
                 }}>
-                Ikatan Alumni
+                Ikatan Alumni SMA IT BUNAYYA
               </small>
             </div>
           </div>
@@ -66,8 +66,10 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>© 2026 Ikatan Alumni SMAIT Bunayya. Seluruh hak dilindungi.</span>
-        <span>Dibangun dengan ukhuwah 🤝</span>
+        <span>
+          © 2026 Ikatan Alumni SMA IT Bunayya. Seluruh hak dilindungi.
+        </span>
+        <span>Dibangun dengan Solidaritas</span>
       </div>
     </footer>
   );

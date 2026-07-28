@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react';
-
 export default function LogoMarquee() {
   const kampusList = [
     { nama: 'Universitas Padjadjaran', logo: '/assets/kampus/UNPAD.png' },

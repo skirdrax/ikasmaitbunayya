@@ -1,10 +1,6 @@
 export default function KampusAlumni() {
   const kampusList = [
     {
-      nama: 'Universitas Brawijaya',
-      logo: '/assets/kampus/UB.png',
-    },
-    {
       nama: 'Universitas Padjadjaran',
       logo: '/assets/kampus/UNPAD.png',
     },
@@ -12,6 +8,11 @@ export default function KampusAlumni() {
       nama: 'Institut pertanian Bogor',
       logo: '/assets/kampus/IPB.png',
     },
+    {
+      nama: 'Universitas Brawijaya',
+      logo: '/assets/kampus/UB.png',
+    },
+
     {
       nama: 'Universitas Negeri Sebelas Maret',
       logo: '/assets/kampus/UNS.png',

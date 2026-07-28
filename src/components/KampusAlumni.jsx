@@ -19,7 +19,7 @@ export default function KampusAlumni() {
     },
 
     {
-      nama: 'UUniversitas Negeri Jakarta',
+      nama: 'Universitas Negeri Jakarta',
       logo: '/assets/kampus/UNJ.png',
     },
     {

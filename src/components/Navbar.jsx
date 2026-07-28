@@ -2,6 +2,12 @@ import { useState } from 'react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState('beranda');
+
+  const handleMenuClick = (menu) => {
+    setActiveMenu(menu);
+    setIsOpen(false);
+  };
 
   return (
     <header>
@@ -19,13 +25,36 @@ export default function Navbar() {
         </div>
 
         <div className="nav-links">
-          <a href="#beranda" className="active">
+          <a
+            href="#beranda"
+            className={activeMenu === 'beranda' ? 'active' : ''}
+            onClick={() => handleMenuClick('beranda')}>
             Beranda
           </a>
-          <a href="#peta">Peta Sebaran</a>
-          <a href="#direktori">Direktori</a>
-          <a href="#manfaat">Manfaat</a> {/* ← TAMBAH */}
-          <a href="#kampus">Kampus Alumni</a>
+          <a
+            href="#peta"
+            className={activeMenu === 'peta' ? 'active' : ''}
+            onClick={() => handleMenuClick('peta')}>
+            Peta Sebaran
+          </a>
+          <a
+            href="#direktori"
+            className={activeMenu === 'direktori' ? 'active' : ''}
+            onClick={() => handleMenuClick('direktori')}>
+            Direktori
+          </a>
+          <a
+            href="#manfaat"
+            className={activeMenu === 'manfaat' ? 'active' : ''}
+            onClick={() => handleMenuClick('manfaat')}>
+            Manfaat
+          </a>
+          <a
+            href="#kampus"
+            className={activeMenu === 'kampus' ? 'active' : ''}
+            onClick={() => handleMenuClick('kampus')}>
+            Kampus Alumni
+          </a>
         </div>
 
         <div className="nav-right">
@@ -40,11 +69,36 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="mobile-menu">
-          <a href="#beranda">Beranda</a>
-          <a href="#peta">Peta Sebaran</a>
-          <a href="#direktori">Direktori</a>
-          <a href="#manfaat">Manfaat</a> {/* ← TAMBAH */}
-          <a href="#kampus">Kampus Alumni</a>
+          <a
+            href="#beranda"
+            className={activeMenu === 'beranda' ? 'active' : ''}
+            onClick={() => handleMenuClick('beranda')}>
+            Beranda
+          </a>
+          <a
+            href="#peta"
+            className={activeMenu === 'peta' ? 'active' : ''}
+            onClick={() => handleMenuClick('peta')}>
+            Peta Sebaran
+          </a>
+          <a
+            href="#direktori"
+            className={activeMenu === 'direktori' ? 'active' : ''}
+            onClick={() => handleMenuClick('direktori')}>
+            Direktori
+          </a>
+          <a
+            href="#manfaat"
+            className={activeMenu === 'manfaat' ? 'active' : ''}
+            onClick={() => handleMenuClick('manfaat')}>
+            Manfaat
+          </a>
+          <a
+            href="#kampus"
+            className={activeMenu === 'kampus' ? 'active' : ''}
+            onClick={() => handleMenuClick('kampus')}>
+            Kampus Alumni
+          </a>
           <button className="btn btn-join">Gabung</button>
         </div>
       )}

@@ -65,6 +65,8 @@ header {
   position: relative;
   padding: 6px 0;
   transition: color var(--transition);
+  cursor: pointer;
+  text-decoration: none;
 }
 .nav-links a:hover {
   color: var(--forest);
@@ -101,6 +103,9 @@ header {
   padding: 8px;
   flex-direction: column;
   gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 .burger span {
   width: 24px;
@@ -135,9 +140,15 @@ header {
     font-weight: 500;
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
     color: var(--ink-soft);
+    text-decoration: none;
+    cursor: pointer;
   }
   .mobile-menu a:hover {
     color: var(--forest);
+  }
+  .mobile-menu a.active {
+    color: var(--forest);
+    font-weight: 600;
   }
   .mobile-menu .btn-join {
     background: #ffffff;

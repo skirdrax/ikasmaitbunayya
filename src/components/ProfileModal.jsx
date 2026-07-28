@@ -1,10 +1,20 @@
 export default function ProfileModal({ student, onClose }) {
-  if (!student) return null;
+  if (!student) {
+    console.log('⚠️ ProfileModal: student null');
+    return null;
+  }
+
+  console.log('✅ ProfileModal rendering untuk:', student.nama);
 
   return (
     <div
       className="modal-backdrop show"
-      onClick={(e) => e.target === e.currentTarget && onClose()}>
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          console.log('🔄 Klik backdrop, close modal');
+          onClose();
+        }
+      }}>
       <div className="modal">
         <div className="modal-top">
           <button className="modal-close" onClick={onClose} aria-label="Tutup">

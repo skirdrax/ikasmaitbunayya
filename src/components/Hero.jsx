@@ -5,15 +5,16 @@ export default function Hero({ onSearchResult }) {
   const [query, setQuery] = useState('');
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
 
   // ===== COUNTER ANIMASI =====
-  const [counts, setCounts] = useState({ alumni: 0, lulus: 0, kota: 0 });
+  const [counts, setCounts] = useState({ alumni: 0, pt: 0, kota: 0 });
   const counterRef = useRef(null);
   const hasAnimated = useRef(false);
 
   useEffect(() => {
-    const targetAlumni = 50;
-    const targetLulus = 100;
+    const targetAlumni = 40;
+    const targetpt = 15;
     const targetKota = 10;
 
     const observer = new IntersectionObserver(
@@ -28,13 +29,11 @@ export default function Hero({ onSearchResult }) {
             const animateCounter = () => {
               const now = Date.now();
               const progress = Math.min((now - startTime) / duration, 1);
-
-              // Ease out cubic
               const ease = 1 - Math.pow(1 - progress, 3);
 
               setCounts({
                 alumni: Math.round(ease * targetAlumni),
-                lulus: Math.round(ease * targetLulus),
+                pt: Math.round(ease * targetpt),
                 kota: Math.round(ease * targetKota),
               });
 
@@ -60,7 +59,9 @@ export default function Hero({ onSearchResult }) {
   // ===== SEARCH =====
   const handleSearch = (e) => {
     const value = e.target.value;
+
     setQuery(value);
+    setSelectedStudent(null); // RESET selectedStudent
 
     if (value.length > 0) {
       const searchTerm = value.toLowerCase();
@@ -76,19 +77,47 @@ export default function Hero({ onSearchResult }) {
     }
   };
 
-  const handleSelectStudent = (student) => {
+  // ===== PILIH SUGGESTION → ISI INPUT =====
+  const handleSelectSuggestion = (student) => {
     setQuery(student.nama);
+    setSelectedStudent(student);
     setSuggestions([]);
     setShowSuggestions(false);
-    if (onSearchResult) {
-      onSearchResult(student);
-    }
   };
 
+  // ===== TOMBOL CARI → BUKA MODAL =====
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    if (suggestions.length > 0) {
-      handleSelectStudent(suggestions[0]);
+
+    if (selectedStudent) {
+      console.log('✅ Membuka modal untuk:', selectedStudent.nama);
+      if (onSearchResult) {
+        onSearchResult(selectedStudent);
+      }
+      setQuery('');
+      setSuggestions([]);
+      setShowSuggestions(false);
+      setSelectedStudent(null);
+      return;
+    }
+
+    const searchTerm = query.trim().toLowerCase();
+
+    if (!searchTerm) return;
+
+    const student = students.find((s) => s.nama.toLowerCase() === searchTerm);
+
+    if (student) {
+      console.log('✅ Exact match ditemukan:', student.nama);
+      if (onSearchResult) {
+        onSearchResult(student);
+      }
+      setQuery('');
+      setSuggestions([]);
+      setShowSuggestions(false);
+      setSelectedStudent(null);
+    } else {
+      alert('Alumni tidak ditemukan!');
     }
   };
 
@@ -112,7 +141,7 @@ export default function Hero({ onSearchResult }) {
               </svg>
               <input
                 type="text"
-                placeholder="Cari Alumni (Nama / Jurusan / Kampus / Kota / Angkatan)"
+                placeholder="Cari Nama Alumni yang anda kenal..."
                 value={query}
                 onChange={handleSearch}
                 onFocus={() => query.length > 0 && setShowSuggestions(true)}
@@ -124,6 +153,7 @@ export default function Hero({ onSearchResult }) {
               </button>
             </form>
 
+            {/* SUGGESTIONS - PAKAI onMouseDown biar ga kena onBlur */}
             {showSuggestions && query.length > 0 && (
               <div className="search-suggestions">
                 {suggestions.length > 0 ? (
@@ -132,7 +162,10 @@ export default function Hero({ onSearchResult }) {
                       <div
                         key={student.id}
                         className="search-suggestion-item"
-                        onClick={() => handleSelectStudent(student)}>
+                        onMouseDown={(e) => {
+                          e.preventDefault(); // Mencegah onBlur keburu jalan
+                          handleSelectSuggestion(student);
+                        }}>
                         <div className="suggestion-avatar">
                           <img src={student.foto} alt={student.nama} />
                         </div>
@@ -172,15 +205,14 @@ export default function Hero({ onSearchResult }) {
             dari setiap angkatan — tersebar di seluruh Indonesia
           </p>
 
-          {/* COUNTERS DENGAN ANIMASI */}
           <div className="counters" ref={counterRef}>
             <div className="counter-card">
               <div className="num">{counts.alumni.toLocaleString()}+</div>
               <div className="label">Alumni Terdaftar</div>
             </div>
             <div className="counter-card">
-              <div className="num">{counts.lulus}%</div>
-              <div className="label">Lolos PTN </div>
+              <div className="num">{counts.pt}+</div>
+              <div className="label">Perguruan Tinggi</div>
             </div>
             <div className="counter-card">
               <div className="num">{counts.kota}+</div>

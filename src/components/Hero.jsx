@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { students } from '../data/mockData.js';
+import LogoMarquee from './LogoMarquee';
 
 export default function Hero({ onSearchResult }) {
   const [query, setQuery] = useState('');
@@ -61,7 +62,7 @@ export default function Hero({ onSearchResult }) {
     const value = e.target.value;
 
     setQuery(value);
-    setSelectedStudent(null); // RESET selectedStudent
+    setSelectedStudent(null);
 
     if (value.length > 0) {
       const searchTerm = value.toLowerCase();
@@ -153,7 +154,6 @@ export default function Hero({ onSearchResult }) {
               </button>
             </form>
 
-            {/* SUGGESTIONS - PAKAI onMouseDown biar ga kena onBlur */}
             {showSuggestions && query.length > 0 && (
               <div className="search-suggestions">
                 {suggestions.length > 0 ? (
@@ -163,7 +163,7 @@ export default function Hero({ onSearchResult }) {
                         key={student.id}
                         className="search-suggestion-item"
                         onMouseDown={(e) => {
-                          e.preventDefault(); // Mencegah onBlur keburu jalan
+                          e.preventDefault();
                           handleSelectSuggestion(student);
                         }}>
                         <div className="suggestion-avatar">
@@ -220,6 +220,9 @@ export default function Hero({ onSearchResult }) {
             </div>
           </div>
         </div>
+
+        {/* ===== LOGO MARQUEE DI BAWAH COUNTERS ===== */}
+        <LogoMarquee />
       </div>
     </section>
   );

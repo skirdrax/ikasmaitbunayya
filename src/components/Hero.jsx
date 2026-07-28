@@ -7,6 +7,7 @@ export default function Hero({ onSearchResult }) {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [showNotFound, setShowNotFound] = useState(false); // ← STATE POPUP
 
   // ===== COUNTER ANIMASI =====
   const [counts, setCounts] = useState({ alumni: 0, pt: 0, kota: 0 });
@@ -63,6 +64,7 @@ export default function Hero({ onSearchResult }) {
 
     setQuery(value);
     setSelectedStudent(null);
+    setShowNotFound(false); // HIDE POPUP
 
     if (value.length > 0) {
       const searchTerm = value.toLowerCase();
@@ -84,6 +86,7 @@ export default function Hero({ onSearchResult }) {
     setSelectedStudent(student);
     setSuggestions([]);
     setShowSuggestions(false);
+    setShowNotFound(false);
   };
 
   // ===== TOMBOL CARI → BUKA MODAL =====
@@ -99,6 +102,7 @@ export default function Hero({ onSearchResult }) {
       setSuggestions([]);
       setShowSuggestions(false);
       setSelectedStudent(null);
+      setShowNotFound(false);
       return;
     }
 
@@ -117,8 +121,13 @@ export default function Hero({ onSearchResult }) {
       setSuggestions([]);
       setShowSuggestions(false);
       setSelectedStudent(null);
+      setShowNotFound(false);
     } else {
-      alert('Alumni tidak ditemukan!');
+      // TAMPILKAN POPUP NOT FOUND
+      setShowNotFound(true);
+      setTimeout(() => {
+        setShowNotFound(false);
+      }, 3000); // Hilang otomatis setelah 3 detik
     }
   };
 
@@ -221,9 +230,19 @@ export default function Hero({ onSearchResult }) {
           </div>
         </div>
 
-        {/* ===== LOGO MARQUEE DI BAWAH COUNTERS ===== */}
         <LogoMarquee />
       </div>
+
+      {/* ===== POPUP NOT FOUND ===== */}
+      {showNotFound && (
+        <div className="popup-notfound">
+          <div className="popup-notfound-content">
+            <span className="popup-icon">🔍</span>
+            <h3>Alumni Tidak Ditemukan</h3>
+            <p>Mohon periksa kembali nama yang anda cari</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

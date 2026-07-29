@@ -137,7 +137,7 @@ export default function SaranPage({ onBack }) {
                 <label>Angkatan</label>
                 <select
                   name="Tahun"
-                  value={formData.Tahun}
+                  value={formData.TahunA}
                   onChange={handleChange}
                   required
                   disabled={isLoading}>

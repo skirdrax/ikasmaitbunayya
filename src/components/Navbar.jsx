@@ -88,6 +88,7 @@ export default function Navbar({ onSaranClick }) {
         </div>
 
         <div className="nav-right">
+          {/* ===== TOMBOL SARAN & MASUKAN (DESKTOP) ===== */}
           <button className="btn btn-report" onClick={onSaranClick}>
             💬 Saran & Masukan
           </button>
@@ -131,7 +132,10 @@ export default function Navbar({ onSaranClick }) {
             onClick={() => handleMenuClick('kampus')}>
             Kampus Alumni
           </a>
-          <button className="btn btn-report" onClick={onSaranClick}>
+          {/* ===== TOMBOL SARAN & MASUKAN DI DALAM HAMBURGER ===== */}
+          <button
+            className="btn btn-report mobile-report"
+            onClick={onSaranClick}>
             💬 Saran & Masukan
           </button>
         </div>

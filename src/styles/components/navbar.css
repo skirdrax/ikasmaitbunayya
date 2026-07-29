@@ -197,22 +197,37 @@ header {
     border-color: var(--gold);
   }
 
-  /* ===== TOMBOL SARAN & MASUKAN DI MOBILE ===== */
-  .mobile-menu .btn-report {
-    background: #ffffff;
-    color: var(--forest);
-    border: 1.5px solid var(--gold);
-    width: 100%;
-    justify-content: center;
-    margin-top: 12px;
-    padding: 12px;
-    font-size: 15px;
-  }
+  /* ===== TOMBOL SARAN & MASUKAN DI MOBILE (DI DALAM HAMBURGER) ===== */
+  @media (max-width: 900px) {
+    /* SEMBUNYIKAN TOMBOL SARAN DI LUAR HAMBURGER */
+    .nav-right .btn-report {
+      display: none !important;
+    }
 
-  .mobile-menu .btn-report:hover {
-    background: var(--gold);
-    color: #ffffff;
-    border-color: var(--gold);
+    /* TAMPILKAN DI DALAM HAMBURGER */
+    .mobile-report {
+      background: #ffffff;
+      color: var(--forest);
+      border: 1.5px solid var(--gold);
+      width: 100%;
+      justify-content: center;
+      margin-top: 12px;
+      padding: 12px;
+      font-size: 15px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: inline-flex !important;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mobile-report:hover {
+      background: var(--gold);
+      color: #ffffff;
+      border-color: var(--gold);
+    }
   }
 }
 

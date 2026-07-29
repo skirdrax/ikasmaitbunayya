@@ -20,16 +20,6 @@ export default function ManfaatIKA() {
       title: 'Beasiswa & Bantuan Pendidikan',
       desc: 'Menggalang dana beasiswa untuk adik-adik kelas dan program bantuan pendidikan lainnya.',
     },
-    {
-      icon: '🏗️',
-      title: 'Kontribusi untuk Sekolah',
-      desc: 'Berperan aktif dalam pembangunan dan pengembangan fasilitas pendidikan di SMAIT Bunayya.',
-    },
-    {
-      icon: '🌍',
-      title: 'Pemberdayaan Masyarakat',
-      desc: 'Program sosial dan bakti masyarakat sebagai wujud kepedulian alumni terhadap lingkungan sekitar.',
-    },
   ];
 
   return (

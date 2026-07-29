@@ -98,6 +98,39 @@ header {
   gap: 16px;
 }
 
+/* ======================================== */
+/* ===== TOMBOL SARAN & MASUKAN ===== */
+/* ======================================== */
+
+.btn-report {
+  background: transparent;
+  color: var(--forest);
+  border: 1.5px solid var(--gold);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-report:hover {
+  background: var(--gold);
+  color: #ffffff;
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 169, 110, 0.25);
+}
+
+.btn-report:active {
+  transform: scale(0.97);
+}
+
+/* ======================================== */
+
 .burger {
   display: none;
   padding: 8px;
@@ -163,4 +196,111 @@ header {
     color: #ffffff;
     border-color: var(--gold);
   }
+
+  /* ===== TOMBOL SARAN & MASUKAN DI MOBILE ===== */
+  .mobile-menu .btn-report {
+    background: #ffffff;
+    color: var(--forest);
+    border: 1.5px solid var(--gold);
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .mobile-menu .btn-report:hover {
+    background: var(--gold);
+    color: #ffffff;
+    border-color: var(--gold);
+  }
+}
+
+/* ===== NAVBAR TRANSPARAN DI BERANDA ===== */
+header.transparent {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header.transparent .logo {
+  color: #ffffff;
+}
+
+header.transparent .logo small {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+header.transparent .logo-mark {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+header.transparent .nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+header.transparent .nav-links a:hover {
+  color: #ffffff;
+}
+
+header.transparent .nav-links a.active {
+  color: #ffffff;
+}
+
+header.transparent .burger span {
+  background: #ffffff;
+}
+
+header.transparent .btn-report {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+header.transparent .btn-report:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== NAVBAR SAAT SCROLL (PUTIH) ===== */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+header.scrolled .logo {
+  color: var(--forest);
+}
+
+header.scrolled .logo small {
+  color: var(--gold);
+}
+
+header.scrolled .logo-mark {
+  background: var(--forest);
+}
+
+header.scrolled .nav-links a {
+  color: var(--ink-soft);
+}
+
+header.scrolled .nav-links a:hover {
+  color: var(--forest);
+}
+
+header.scrolled .nav-links a.active {
+  color: var(--forest);
+}
+
+header.scrolled .burger span {
+  background: var(--ink);
+}
+
+header.scrolled .btn-report {
+  color: var(--forest);
+  border-color: var(--gold);
+}
+
+header.scrolled .btn-report:hover {
+  background: var(--gold);
+  color: #ffffff;
+  border-color: var(--gold);
 }

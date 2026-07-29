@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ onSaranClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState('beranda');
@@ -9,15 +9,19 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-      // ===== CEK SECTION YANG SEDANG DILIHAT =====
+  // ===== SCROLL SPY =====
+  useEffect(() => {
+    const handleScrollSpy = () => {
       const sections = ['beranda', 'peta', 'direktori', 'manfaat', 'kampus'];
-
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Jika section terlihat di viewport (bagian atas)
           if (rect.top <= 100 && rect.bottom >= 100) {
             setActiveMenu(section);
             break;
@@ -25,12 +29,9 @@ export default function Navbar() {
         }
       }
     };
-
-    window.addEventListener('scroll', handleScroll);
-    // Jalankan sekali saat mount
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScrollSpy);
+    handleScrollSpy();
+    return () => window.removeEventListener('scroll', handleScrollSpy);
   }, []);
 
   const handleMenuClick = (menu) => {
@@ -87,7 +88,9 @@ export default function Navbar() {
         </div>
 
         <div className="nav-right">
-          <button className="btn btn-join">Gabung</button>
+          <button className="btn btn-report" onClick={onSaranClick}>
+            💬 Saran & Masukan
+          </button>
           <button className="burger" onClick={() => setIsOpen(!isOpen)}>
             <span></span>
             <span></span>
@@ -128,7 +131,9 @@ export default function Navbar() {
             onClick={() => handleMenuClick('kampus')}>
             Kampus Alumni
           </a>
-          <button className="btn btn-join">Gabung</button>
+          <button className="btn btn-report" onClick={onSaranClick}>
+            💬 Saran & Masukan
+          </button>
         </div>
       )}
     </header>

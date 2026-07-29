@@ -1,0 +1,218 @@
+/* ======================================== */
+/* ===== SARAN & MASUKAN PAGE ===== */
+/* ======================================== */
+
+.saran-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafb 0%, #eef1f5 100%);
+  padding: 40px 0 60px;
+  display: flex;
+  align-items: center;
+}
+
+.saran-page .container {
+  width: 100%;
+}
+
+.saran-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.saran-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.saran-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.saran-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+}
+
+.saran-header p {
+  color: #4a4a4a;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.saran-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.saran-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.saran-form .form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.saran-form .form-group input,
+.saran-form .form-group select,
+.saran-form .form-group textarea {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #e5e7eb;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+  color: #1a1a1a;
+}
+
+.saran-form .form-group input:focus,
+.saran-form .form-group select:focus,
+.saran-form .form-group textarea:focus {
+  outline: none;
+  border-color: #c9a96e;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.08);
+}
+
+.saran-form .form-group input:disabled,
+.saran-form .form-group select:disabled,
+.saran-form .form-group textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.saran-form .form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.saran-form .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  margin-top: 4px;
+}
+
+.saran-form .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.saran-error {
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.saran-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.saran-success span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.saran-success h4 {
+  font-size: 22px;
+  color: #1a4d3e;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+}
+
+.saran-success p {
+  color: #4a4a4a;
+  margin-bottom: 24px;
+}
+
+/* ===== BACK LINK ===== */
+.saran-page .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a4d3e;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  transition: all 0.25s ease;
+}
+
+.saran-page .back-link:hover {
+  color: #c9a96e;
+  transform: translateX(-4px);
+}
+
+/* ===== LOADING SPINNER ===== */
+.loading-spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .saran-content {
+    padding: 28px 20px;
+    border-radius: 16px;
+    margin: 0 12px;
+  }
+
+  .saran-header h1 {
+    font-size: 22px;
+  }
+
+  .saran-page {
+    padding: 20px 0 40px;
+  }
+
+  .saran-form .form-group input,
+  .saran-form .form-group select,
+  .saran-form .form-group textarea {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .saran-form .btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

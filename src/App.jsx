@@ -7,25 +7,27 @@ import ManfaatIKA from './components/ManfaatIKA';
 import KampusAlumni from './components/KampusAlumni';
 import StudentOverlay from './components/StudentOverlay';
 import ProfileModal from './components/ProfileModal';
+import SaranPage from './components/SaranPage';
 import Footer from './components/Footer';
 import './styles/index.css';
 
 function App() {
   const [selectedBatch, setSelectedBatch] = useState(null);
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [showSaranPage, setShowSaranPage] = useState(false);
 
-  // ===== FUNGSI INI DIPANGGIL DARI HERO =====
   const handleSearchResult = (student) => {
-    console.log('🔍 App menerima student:', student);
-    console.log('🔍 Nama student:', student?.nama);
     setSelectedStudent(student);
   };
 
-  console.log('🟢 selectedStudent saat ini:', selectedStudent);
+  // Jika halaman Saran aktif, tampilkan itu saja
+  if (showSaranPage) {
+    return <SaranPage onBack={() => setShowSaranPage(false)} />;
+  }
 
   return (
     <>
-      <Navbar />
+      <Navbar onSaranClick={() => setShowSaranPage(true)} />
       <Hero onSearchResult={handleSearchResult} />
       <MapSection />
       <BatchDirectory onSelectBatch={setSelectedBatch} />
@@ -44,10 +46,7 @@ function App() {
       {selectedStudent && (
         <ProfileModal
           student={selectedStudent}
-          onClose={() => {
-            console.log('❌ Modal ditutup');
-            setSelectedStudent(null);
-          }}
+          onClose={() => setSelectedStudent(null)}
         />
       )}
     </>

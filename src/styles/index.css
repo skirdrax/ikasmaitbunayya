@@ -18,6 +18,7 @@
 @import './responsive.css';
 @import './components/manfaat.css'; /* ← TAMBAH */
 @import './components/marquee.css';
+@import './components/saran.css'; /* ← TAMBAHKAN INI */
 
 /* ===== BIAR BERANDA MENTOK ATAS ===== */
 #beranda {

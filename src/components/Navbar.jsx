@@ -49,7 +49,7 @@ export default function Navbar({ onSaranClick }) {
             </svg>
           </div>
           <div>
-            IKA SMANAYA
+            IKA SMANAYYA
             <small>Ikatan Alumni SMA IT BUNAYYA</small>
           </div>
         </div>

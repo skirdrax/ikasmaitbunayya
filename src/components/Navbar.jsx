@@ -1,8 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState('beranda');
+
+  // ===== DETEK SCROLL =====
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      // ===== CEK SECTION YANG SEDANG DILIHAT =====
+      const sections = ['beranda', 'peta', 'direktori', 'manfaat', 'kampus'];
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Jika section terlihat di viewport (bagian atas)
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveMenu(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Jalankan sekali saat mount
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
@@ -10,7 +39,7 @@ export default function Navbar() {
   };
 
   return (
-    <header>
+    <header className={scrolled ? 'scrolled' : ''}>
       <nav className="navbar">
         <div className="logo">
           <div className="logo-mark">

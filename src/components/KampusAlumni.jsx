@@ -116,8 +116,8 @@ export default function KampusAlumni() {
           <div className="eyebrow orange">Kampus Alumni</div>
           <h2>Alumni Tersebar di Berbagai Kampus</h2>
           <p>
-            Alumni SMA IT Bunayya melanjutkan studi ke berbagai universitas
-            ternama di seluruh Indonesia
+            Alumni SMA IT Bunayya melanjutkan studi ke berbagai Perguruan Tinggi
+            Negeri & Swasta di seluruh Indonesia
           </p>
         </div>
 

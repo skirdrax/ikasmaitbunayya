@@ -18,3 +18,12 @@
 @import './responsive.css';
 @import './components/manfaat.css'; /* ← TAMBAH */
 @import './components/marquee.css';
+
+/* ===== BIAR BERANDA MENTOK ATAS ===== */
+#beranda {
+  scroll-margin-top: 0px !important;
+}
+
+section[id] {
+  scroll-margin-top: 76px;
+}

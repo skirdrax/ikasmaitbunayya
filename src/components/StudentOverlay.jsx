@@ -1,8 +1,28 @@
+import { useEffect } from 'react';
 import { batches, students } from '../data/mockData.js';
 
 export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
   const batch = batches.find((b) => b.id === batchId);
   const studentsByBatch = students.filter((s) => s.angkatan === batch?.tahun);
+
+  // ===== TANGKAP TOMBOL BACK BROWSER =====
+  useEffect(() => {
+    // Push state baru ke history
+    window.history.pushState({ overlay: true }, '');
+
+    // Listener untuk popstate (tombol back)
+    const handlePopState = (event) => {
+      if (event.state?.overlay) {
+        onBack();
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [onBack]);
 
   return (
     <div className="overlay show">
@@ -32,8 +52,6 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
             </p>
           </div>
         </div>
-
-        {/* FILTER DIHAPUS */}
 
         <div className="student-grid">
           {studentsByBatch.map((s) => (

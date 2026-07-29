@@ -46,8 +46,16 @@ export default function LogoMarquee() {
     { nama: 'Politeknik Kirana', logo: '/assets/kampus/PK.png' },
   ];
 
-  // Duplikat list untuk efek infinite
-  const duplicatedList = [...kampusList, ...kampusList, ...kampusList];
+  // Duplikat 3x buat infinite
+  const duplicatedList = [
+    ...kampusList,
+    ...kampusList,
+    ...kampusList,
+    ...kampusList,
+    ...kampusList,
+    ...kampusList,
+    ...kampusList,
+  ];
 
   return (
     <div className="logo-marquee-wrapper">

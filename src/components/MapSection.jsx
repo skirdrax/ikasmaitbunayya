@@ -1,4 +1,4 @@
-import { pins, intlChips } from '../data/mockData.js';
+import { pins } from '../data/mockData.js';
 
 export default function MapSection() {
   return (
@@ -14,9 +14,16 @@ export default function MapSection() {
         </div>
 
         <div className="map-simple">
-          <div className="map-title">PETA INDONESIA</div>
+          <div className="map-title">PETA SEBARAN ALUMNI INDONESIA</div>
 
           <div className="map-grid">
+            {/* Vektor Siluet Peta Indonesia */}
+            <img
+              src="https://raw.githubusercontent.com/djaiss/mapsicon/master/all/id/vector.svg"
+              alt="Peta Indonesia"
+              className="map-bg-svg"
+            />
+
             {pins.map((pin, i) => (
               <div
                 key={i}
@@ -30,9 +37,9 @@ export default function MapSection() {
                 <div className="map-point-tooltip">
                   <strong>{pin.city}</strong>
                   <br />
-                  {pin.count} Alumni
+                  <span>{pin.count} Alumni</span>
                   <br />
-                  {pin.campus}
+                  <small className="campus-text">{pin.campus}</small>
                 </div>
               </div>
             ))}
@@ -44,14 +51,7 @@ export default function MapSection() {
           </div>
         </div>
 
-        <div className="intl-strip">
-          {intlChips.map((chip, i) => (
-            <div key={i} className="intl-chip">
-              <span className="dot"></span>
-              {chip}
-            </div>
-          ))}
-        </div>
+        {/* INTERNATIONAL CHIPS DIHAPUS */}
       </div>
     </section>
   );

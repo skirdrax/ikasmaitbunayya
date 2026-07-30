@@ -60,8 +60,8 @@ export const pins = [
     left: '37%',
     topMobile: '71%',
     leftMobile: '37%',
-    count: 1,
-    campus: 'Unbraw',
+    count: 2,
+    campus: 'Unbraw & Polinema',
   },
 ];
 // ============ DATA ANGKATAN ============

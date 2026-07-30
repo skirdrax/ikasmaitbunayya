@@ -33,7 +33,7 @@ export default function MapSection() {
         <div className="section-head">
           <div className="eyebrow orange">Peta Sebaran</div>
           <h2>Alumni Tersebar di Seluruh Indonesia</h2>
-          <p>alumni SMAIT Bunayya di berbagai Provinsi </p>
+          <p>Alumni SMAIT Bunayya di berbagai Provinsi </p>
         </div>
 
         <div className="map-simple">

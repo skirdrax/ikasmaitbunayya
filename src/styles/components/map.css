@@ -1,5 +1,5 @@
 /* ======================================== */
-/* ===== MAP SECTION (FULL RAKSASA) ===== */
+/* ===== MAP SECTION ===== */
 /* ======================================== */
 
 .map-simple {
@@ -9,7 +9,7 @@
   padding: 30px 20px 20px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  overflow: hidden; /* Memotong bagian peta yang keluar saat di-scale */
+  overflow: hidden;
 }
 
 .map-title {
@@ -23,29 +23,27 @@
   z-index: 6;
 }
 
-/* Container utama peta */
 .map-grid {
   position: relative;
   width: 100%;
-  height: 480px; /* Tinggi container area peta */
+  height: 480px;
   margin: 0 auto;
+  overflow: visible;
 }
 
-/* GAMBAR PETA DIPAKSA MEMBESAR (SCALE 1.95) */
 .map-bg-svg {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  opacity: 0.5;
-  filter: drop-shadow(0px 4px 10px rgba(26, 77, 62, 0.25));
+  opacity: 0.4;
+  filter: drop-shadow(0px 4px 10px rgba(26, 77, 62, 0.2));
   pointer-events: none;
   user-select: none;
-  /* KUNCI BESARNYA DI SINI: */
   transform: scale(2.5);
   transform-origin: center center;
 }
 
-/* Titik Pin */
+/* ===== PIN ===== */
 .map-point {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -54,13 +52,12 @@
 }
 
 .map-point-dot {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   background: #c9a96e;
   border: 2px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  margin: 0 auto;
   transition: all 0.3s ease;
 }
 
@@ -70,22 +67,35 @@
   box-shadow: 0 4px 12px rgba(212, 137, 59, 0.5);
 }
 
+/* ===== LABEL DEFAULT (DI ATAS PIN) ===== */
 .map-point-label {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
   color: #1a4d3e;
   text-align: center;
-  margin-top: 4px;
   white-space: nowrap;
-  text-shadow:
-    0 1px 3px rgba(255, 255, 255, 0.9),
-    0 -1px 3px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95);
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 2px 6px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Tooltip saat Hover Pin */
+/* ===== LABEL BANTEN, JAWA BARAT, JAWA TIMUR (DI BAWAH PIN) ===== */
+.map-point:nth-child(5) .map-point-label,
+.map-point:nth-child(7) .map-point-label {
+  top: auto;
+  bottom: -18px;
+}
+/* ===== TOOLTIP ===== */
 .map-point-tooltip {
   position: absolute;
-  bottom: calc(100% + 10px);
+  bottom: calc(100% + 18px);
   left: 50%;
   transform: translateX(-50%);
   background: #ffffff;
@@ -114,7 +124,7 @@
   transform: translateX(-50%) translateY(-4px);
 }
 
-/* Legend & Strip Internasional */
+/* ===== LEGEND ===== */
 .map-legend-simple {
   position: absolute;
   bottom: 16px;
@@ -141,44 +151,100 @@
   display: inline-block;
 }
 
-.intl-strip {
-  margin-top: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+/* ======================================== */
+/* ===== RESPONSIVE ===== */
+/* ======================================== */
 
-.intl-chip {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #1a4d3e;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.intl-chip .dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #c9a96e;
-}
-
-/* Responsif Mobile */
 @media (max-width: 768px) {
+  .map-grid {
+    height: 380px;
+  }
+
+  .map-bg-svg {
+    transform: scale(2);
+  }
+
+  .map-point-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .map-point-label {
+    font-size: 8px;
+    top: -16px;
+    padding: 1px 5px;
+  }
+
+  /* LABEL DI BAWAH TETAP DI BAWAH */
+  .map-point:nth-child(3) .map-point-label,
+  .map-point:nth-child(5) .map-point-label,
+  .map-point:nth-child(7) .map-point-label {
+    top: auto;
+    bottom: -16px;
+  }
+
+  .map-point-tooltip {
+    min-width: 130px;
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+
+  .map-legend-simple {
+    bottom: 12px;
+    right: 14px;
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
   .map-grid {
     height: 280px;
   }
+
   .map-bg-svg {
-    transform: scale(
-      1.6
-    ); /* Sedikit disesuaikan di HP agar tidak terlalu terpotong */
+    transform: scale(1.8);
   }
+
+  .map-point-dot {
+    width: 10px;
+    height: 10px;
+    border-width: 1.5px;
+  }
+
   .map-point-label {
-    display: none;
+    display: none !important;
+  }
+
+  .map-point-tooltip {
+    min-width: 100px;
+    font-size: 10px;
+    padding: 6px 10px;
+    bottom: calc(100% + 12px);
+  }
+
+  .map-point-tooltip strong {
+    font-size: 12px;
+  }
+
+  .map-legend-simple {
+    bottom: 8px;
+    right: 10px;
+    font-size: 9px;
+    padding: 4px 10px;
+  }
+
+  .legend-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .map-title {
+    font-size: 10px;
+  }
+
+  .map-simple {
+    padding: 16px 10px 10px;
+    border-radius: 12px;
   }
 }

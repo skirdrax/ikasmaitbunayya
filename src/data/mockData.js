@@ -237,7 +237,16 @@ export const students = [
     kampus: 'Universitas Jendral Soedriman',
     kota: 'Purwokerto',
     angkatan: 2025,
-    foto: 'https://ui-avatars.com/api/?name=LDzaki+ARamadhan&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?name=Jzaki+BRamadhan&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 17,
+    nama: 'Hazel Nur Hidayat',
+    jurusan: 'S1 Teknik Metalurgi',
+    kampus: 'Universitas Sultan Ageng Tirtayasa',
+    kota: 'Cilegon',
+    angkatan: 2025,
+    foto: 'https://ui-avatars.com/api/?name=Hzaki+Namadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
 
   // ===== ANGKATAN 3 (2026) - 10 ORANG =====

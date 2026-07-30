@@ -25,7 +25,7 @@ export const pins = [
     topMobile: '67%',
     leftMobile: '16%',
     count: 15,
-    campus: 'Untirta, Esa Unggul, Global Institute, PoliKirana',
+    campus: 'Untirta, Esa Unggul, Global Institute, PoliKirana, & bekerja',
   },
   {
     city: 'DKI Jakarta',

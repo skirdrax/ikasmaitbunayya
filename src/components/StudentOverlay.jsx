@@ -50,7 +50,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
       url: 'https://online.fliphtml5.com/izvhs/xxxx/', // ← GANTI LINK NYA
     },
     3: {
-      title: 'Yearbook Angkatan Ketiga SMAIT Bunayya',
+      title: 'Buku Tahunan Sekolah',
       url: 'https://online.fliphtml5.com/izvhs/BTS-angkatan-3-2026/', // ← GANTI LINK NYA
     },
   };

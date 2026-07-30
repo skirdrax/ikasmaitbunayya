@@ -141,7 +141,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           <div className="fliphtml5-container">
             <div className="fliphtml5-header">
               <h3>{flipData[batchId].title}</h3>
-              <p>Jika ada iklan klik di tengah supaya tidak keluar Website</p>
+              <p>Jika ada iklan..klik di tengah supaya tidak keluar Website</p>
             </div>
             <div className="fliphtml5-wrapper">
               <iframe

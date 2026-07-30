@@ -136,7 +136,7 @@ export default function SaranPage({ onBack }) {
               <div className="form-group">
                 <label>Angkatan</label>
                 <select
-                  name="Tahun"
+                  name="angkatan"
                   value={formData.TahunA}
                   onChange={handleChange}
                   required

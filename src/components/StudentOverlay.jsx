@@ -103,7 +103,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
         {/* ===== JUDUL ===== */}
         <div className="overlay-head">
           <div>
-            <h2>Daftar Murid — {batch?.label}</h2>
+            <h2>Daftar Alumni— {batch?.label}</h2>
             <p></p>
             <p>
               Lulus tahun {batch?.tahun} · {studentsByBatch.length} alumni

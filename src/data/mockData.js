@@ -78,14 +78,14 @@ export const batches = [
     label: 'Angkatan 2',
     tahun: 2025,
     jumlah: 22,
-    photo: '/assets/angkatan/angkatan2.jpg',
+    photo: '/assets/angkatan/2.jpg',
   },
   {
     id: 3,
     label: 'Angkatan 3',
     tahun: 2026,
     jumlah: 10,
-    photo: '/assets/angkatan/angkatan3.jpg',
+    photo: '/assets/angkatan/3.jpg',
   },
 ];
 

@@ -33,11 +33,7 @@ export default function LogoMarquee() {
       logo: '/assets/kampus/POLIMEDIA.png',
     },
     { nama: 'Politeknik Negeri Lampung', logo: '/assets/kampus/POLINELA.png' },
-    { nama: 'Politeknik Negeri Jember', logo: '/assets/kampus/POLIJE.png' },
-    {
-      nama: 'Politeknik Negeri Banyuwangi',
-      logo: '/assets/kampus/POLIWANGI.png',
-    },
+
     { nama: 'Universitas Pertamina', logo: '/assets/kampus/UPER.png' },
     { nama: 'Telkom University', logo: '/assets/kampus/TELKOM.png' },
     { nama: 'Universitas Pancasila', logo: '/assets/kampus/UP.png' },

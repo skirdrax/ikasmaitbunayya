@@ -25,7 +25,7 @@ export default function BatchDirectory({ onSelectBatch }) {
                 <div className="batch-photo">
                   <span className="batch-tag">{b.tahun}</span>
                   <img
-                    src={`https://picsum.photos/seed/angkatan${b.id}/500/320`}
+                    src={b.photo} // ← PAKE FOTO DARI DATA
                     alt={`Foto ${b.label}`}
                   />
                 </div>

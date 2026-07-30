@@ -8,13 +8,36 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
   // ===== STATE UNTUK SLIDE FOTO =====
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // ===== DATA FOTO DUMMY (4 SLIDE) =====
-  const photoSlides = [
-    'https://picsum.photos/seed/angkatan1/800/500',
-    'https://picsum.photos/seed/angkatan2/800/500',
-    'https://picsum.photos/seed/angkatan3/800/500',
-    'https://picsum.photos/seed/angkatan4/800/500',
-  ];
+  // ===== DATA FOTO PER ANGKATAN (4 SLIDE MASING-MASING) =====
+  const photoData = {
+    1: [
+      '/assets/angkatan1/1.jpg',
+      '/assets/angkatan1/2.jpg',
+      '/assets/angkatan1/3.jpg',
+      '/assets/angkatan1/4.jpg',
+    ],
+    2: [
+      'https://picsum.photos/seed/angkatan2_1/800/500',
+      'https://picsum.photos/seed/angkatan2_2/800/500',
+      'https://picsum.photos/seed/angkatan2_3/800/500',
+      'https://picsum.photos/seed/angkatan2_4/800/500',
+    ],
+    3: [
+      'https://picsum.photos/seed/angkatan3_1/800/500',
+      'https://picsum.photos/seed/angkatan3_2/800/500',
+      'https://picsum.photos/seed/angkatan3_3/800/500',
+      'https://picsum.photos/seed/angkatan3_4/800/500',
+    ],
+    4: [
+      'https://picsum.photos/seed/angkatan4_1/800/500',
+      'https://picsum.photos/seed/angkatan4_2/800/500',
+      'https://picsum.photos/seed/angkatan4_3/800/500',
+      'https://picsum.photos/seed/angkatan4_4/800/500',
+    ],
+  };
+
+  // ===== AMBIL FOTO SESUAI ANGKATAN (DEFAULT KE ANGKATAN 1) =====
+  const photoSlides = photoData[batchId] || photoData[1];
 
   // ===== DATA FLIPHTML5 PER ANGKATAN =====
   const flipData = {
@@ -81,6 +104,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
         <div className="overlay-head">
           <div>
             <h2>Daftar Murid — {batch?.label}</h2>
+            <p></p>
             <p>
               Lulus tahun {batch?.tahun} · {studentsByBatch.length} alumni
             </p>
@@ -88,7 +112,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
         </div>
 
         {/* ========================================== */}
-        {/* ===== SLIDE FOTO (4 SLIDE) ===== */}
+        {/* ===== SLIDE FOTO (4 SLIDE PER ANGKATAN) ===== */}
         {/* ========================================== */}
         <div className="photo-slide-container">
           <div className="photo-slide-wrapper">
@@ -117,6 +141,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           <div className="fliphtml5-container">
             <div className="fliphtml5-header">
               <h3>{flipData[batchId].title}</h3>
+              <p>Jika ada iklan klik di tengah supaya tidak keluar Website</p>
             </div>
             <div className="fliphtml5-wrapper">
               <iframe

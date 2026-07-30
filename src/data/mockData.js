@@ -66,9 +66,27 @@ export const pins = [
 ];
 // ============ DATA ANGKATAN ============
 export const batches = [
-  { id: 1, label: 'Angkatan 1', tahun: 2024, jumlah: 14 },
-  { id: 2, label: 'Angkatan 2', tahun: 2025, jumlah: 22 },
-  { id: 3, label: 'Angkatan 3', tahun: 2026, jumlah: 10 },
+  {
+    id: 1,
+    label: 'Angkatan 1',
+    tahun: 2024,
+    jumlah: 14,
+    photo: '/assets/angkatan/1.jpg', // ← FOTO LOKAL
+  },
+  {
+    id: 2,
+    label: 'Angkatan 2',
+    tahun: 2025,
+    jumlah: 22,
+    photo: '/assets/angkatan/angkatan2.jpg',
+  },
+  {
+    id: 3,
+    label: 'Angkatan 3',
+    tahun: 2026,
+    jumlah: 10,
+    photo: '/assets/angkatan/angkatan3.jpg',
+  },
 ];
 
 // ============ DATA ALUMNI ============

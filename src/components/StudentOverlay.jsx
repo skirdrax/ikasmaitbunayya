@@ -42,7 +42,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
   // ===== DATA FLIPHTML5 PER ANGKATAN =====
   const flipData = {
     1: {
-      title: 'Yearbook Angkatan Pertama SMAIT Bunayya',
+      title: 'Buku Tahunan Sekolah',
       url: 'https://online.fliphtml5.com/izvhs/yice/',
     },
     2: {

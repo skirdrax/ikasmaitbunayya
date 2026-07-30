@@ -223,23 +223,41 @@ export const students = [
   // ===== ANGKATAN 2 (2025) - 22 ORANG =====
   {
     id: 15,
-    nama: 'zaki Ramadhan',
-    jurusan: 'Teknik Sipil',
-    kampus: 'Institut Teknologi Bandung',
-    kota: 'Jawa Barat',
+    nama: 'Lira Amelia Felisha',
+    jurusan: 'D3 Akuntansi',
+    kampus: 'Universitas Sultan Ageng Tirtayasa',
+    kota: 'Serang',
     angkatan: 2025,
     foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
 
   // ===== ANGKATAN 3 (2026) - 10 ORANG =====
   {
-    id: 37,
-    nama: 'uwi Sartika',
-    jurusan: 'Ekonomi Syariah',
-    kampus: 'UIN Syarif Hidayatullah',
-    kota: 'DKI Jakarta',
+    id: 35,
+    nama: 'Rendra Dwi  Dharmawan',
+    jurusan: 'D4 Keuangan',
+    kampus: 'Politeknik Negeri Malang',
+    kota: 'Malang',
     angkatan: 2026,
-    foto: 'https://ui-avatars.com/api/?name=Dewi+Sartika&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 36,
+    nama: 'Mufid Abdurrahman',
+    jurusan: 'S1 Agroteknologi',
+    kampus: 'Universitas Padjajaran',
+    kota: 'Sumedang',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 37,
+    nama: 'Muhammad Zidna Argi',
+    jurusan: 'S1 Teknik Industri Pertanian ',
+    kampus: 'Universitas Brawijaya',
+    kota: 'Malang',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
 ];
 

@@ -2,66 +2,222 @@
 /* ===== MANFAAT IKA ===== */
 /* ======================================== */
 
-.manfaat-grid {
+.manfaat-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 28px;
-  margin-top: 20px;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  margin-top: 30px;
+  align-items: start;
 }
 
-.manfaat-card {
-  background: #ffffff;
+/* ===== SISI KIRI: SIDEBAR ===== */
+.manfaat-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f8fafb;
   border-radius: var(--radius-lg);
-  padding: 32px 24px;
-  text-align: center;
-  box-shadow: var(--shadow);
+  padding: 12px;
   border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: all var(--transition);
 }
 
-.manfaat-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lift);
+.manfaat-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.manfaat-menu:hover {
+  background: rgba(201, 169, 110, 0.08);
+}
+
+.manfaat-menu.active {
+  background: #ffffff;
   border-color: var(--gold);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-.manfaat-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.manfaat-card h3 {
-  font-size: 20px;
+.manfaat-menu-title {
+  font-size: 15px;
   font-weight: 600;
   color: var(--ink);
-  margin-bottom: 10px;
-  font-family: var(--sans);
+  flex: 1;
 }
 
-.manfaat-card p {
-  font-size: 14px;
+.manfaat-menu-arrow {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.manfaat-menu.active .manfaat-menu-arrow {
+  opacity: 1;
+}
+
+/* ===== SISI KANAN: DETAIL ===== */
+.manfaat-detail {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.manfaat-detail h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-family: var(--serif);
+}
+
+.manfaat-detail p {
+  font-size: 16px;
   color: var(--ink-soft);
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 0;
 }
 
-/* ===== RESPONSIVE MANFAAT ===== */
-@media (max-width: 640px) {
-  .manfaat-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+/* ======================================== */
+/* ===== RESPONSIVE (LAYOUT TETAP) ===== */
+/* ======================================== */
+
+@media (max-width: 768px) {
+  .manfaat-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 
-  .manfaat-card {
-    padding: 24px 20px;
+  .manfaat-sidebar {
+    padding: 8px;
+    gap: 6px;
   }
 
-  .manfaat-icon {
-    font-size: 36px;
+  .manfaat-menu {
+    padding: 10px 12px;
+    gap: 8px;
   }
 
-  .manfaat-card h3 {
+  .manfaat-menu-title {
+    font-size: 12px;
+  }
+
+  .manfaat-menu-arrow {
+    font-size: 14px;
+  }
+
+  .manfaat-detail {
+    padding: 20px 16px;
+    min-height: 180px;
+  }
+
+  .manfaat-detail h3 {
     font-size: 17px;
+  }
+
+  .manfaat-detail p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manfaat-layout {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 12px;
+  }
+
+  .manfaat-sidebar {
+    padding: 6px;
+    gap: 4px;
+    border-radius: 12px;
+  }
+
+  .manfaat-menu {
+    padding: 8px 10px;
+    gap: 6px;
+    border-radius: 8px;
+  }
+
+  .manfaat-menu-title {
+    font-size: 10px;
+  }
+
+  .manfaat-menu-arrow {
+    font-size: 12px;
+  }
+
+  .manfaat-detail {
+    padding: 14px 12px;
+    min-height: 140px;
+    border-radius: 12px;
+  }
+
+  .manfaat-detail h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .manfaat-detail p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 360px) {
+  .manfaat-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .manfaat-menu {
+    padding: 6px 8px;
+    gap: 4px;
+  }
+
+  .manfaat-menu-title {
+    font-size: 9px;
+  }
+
+  .manfaat-menu-arrow {
+    font-size: 10px;
+  }
+
+  .manfaat-detail {
+    padding: 10px 8px;
+    min-height: 100px;
+  }
+
+  .manfaat-detail h3 {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .manfaat-detail p {
+    font-size: 10px;
+    line-height: 1.4;
   }
 }

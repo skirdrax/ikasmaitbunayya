@@ -75,14 +75,7 @@ export default function KampusAlumni() {
       nama: 'Politeknik Negeri Lampung',
       logo: '/assets/kampus/POLINELA.png',
     },
-    {
-      nama: 'Politeknik Negeri Jember',
-      logo: '/assets/kampus/POLIJE.png',
-    },
-    {
-      nama: 'Politeknik Negeri Banyuwangi',
-      logo: '/assets/kampus/POLIWANGI.png',
-    },
+
     {
       nama: 'Universitas Pertamina',
       logo: '/assets/kampus/UPER.png',

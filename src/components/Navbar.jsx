@@ -90,7 +90,7 @@ export default function Navbar({ onSaranClick }) {
         <div className="nav-right">
           {/* ===== TOMBOL SARAN & MASUKAN (DESKTOP) ===== */}
           <button className="btn btn-report" onClick={onSaranClick}>
-            💬 Saran & Masukan
+            Saran & Masukan
           </button>
           <button className="burger" onClick={() => setIsOpen(!isOpen)}>
             <span></span>

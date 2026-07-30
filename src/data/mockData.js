@@ -228,7 +228,7 @@ export const students = [
     kampus: 'Universitas Sultan Ageng Tirtayasa',
     kota: 'Serang',
     angkatan: 2025,
-    foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?name=LDzaki+ARamadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
 
   // ===== ANGKATAN 3 (2026) - 10 ORANG =====
@@ -239,7 +239,7 @@ export const students = [
     kampus: 'Politeknik Negeri Malang',
     kota: 'Malang',
     angkatan: 2026,
-    foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?name=RDzaki+DRamadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
     id: 36,
@@ -248,7 +248,7 @@ export const students = [
     kampus: 'Universitas Padjajaran',
     kota: 'Sumedang',
     angkatan: 2026,
-    foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?nameMDzaki+Aamadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
     id: 37,
@@ -257,7 +257,7 @@ export const students = [
     kampus: 'Universitas Brawijaya',
     kota: 'Malang',
     angkatan: 2026,
-    foto: 'https://ui-avatars.com/api/?name=Dzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?name=MDzaki+ZRamadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
 ];
 

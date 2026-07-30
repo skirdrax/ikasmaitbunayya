@@ -87,7 +87,7 @@ export const students = [
   // ===== ANGKATAN 2 (2025) - 22 ORANG =====
   {
     id: 15,
-    nama: 'Dzaki Ramadhan',
+    nama: 'zaki Ramadhan',
     jurusan: 'Teknik Sipil',
     kampus: 'Institut Teknologi Bandung',
     kota: 'Jawa Barat',
@@ -98,7 +98,7 @@ export const students = [
   // ===== ANGKATAN 3 (2026) - 10 ORANG =====
   {
     id: 37,
-    nama: 'Dewi Sartika',
+    nama: 'uwi Sartika',
     jurusan: 'Ekonomi Syariah',
     kampus: 'UIN Syarif Hidayatullah',
     kota: 'DKI Jakarta',

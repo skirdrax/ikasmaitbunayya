@@ -5,7 +5,7 @@ export const pins = [
     top: '34%',
     left: '20%',
     topMobile: '34%',
-    leftMobile: '12%',
+    leftMobile: '10%',
     count: 1,
     campus: 'Polibatam',
   },

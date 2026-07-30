@@ -13,7 +13,7 @@ export const pins = [
     city: 'Lampung',
     top: '68%',
     left: '22%',
-    topMobile: '62%',
+    topMobile: '60%',
     leftMobile: '12%',
     count: 4,
     campus: 'Unila & Polinela',

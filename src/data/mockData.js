@@ -221,8 +221,18 @@ export const students = [
   },
 
   // ===== ANGKATAN 2 (2025) - 22 ORANG =====
+
   {
     id: 15,
+    nama: 'Hazel Nur Hidayat',
+    jurusan: 'S1 Teknik Metalurgi',
+    kampus: 'Universitas Sultan Ageng Tirtayasa',
+    kota: 'Cilegon',
+    angkatan: 2025,
+    foto: 'https://ui-avatars.com/api/?name=Hzaki+Namadhan&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 16,
     nama: 'Lira Amelia Felisha',
     jurusan: 'D3 Akuntansi',
     kampus: 'Universitas Sultan Ageng Tirtayasa',
@@ -231,7 +241,7 @@ export const students = [
     foto: 'https://ui-avatars.com/api/?name=LDzaki+ARamadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
-    id: 16,
+    id: 17,
     nama: 'Jasmine Baby Alika',
     jurusan: 'S1 Ilmu Komunikasi',
     kampus: 'Universitas Jendral Soedriman',
@@ -240,11 +250,11 @@ export const students = [
     foto: 'https://ui-avatars.com/api/?name=Jzaki+BRamadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
-    id: 17,
-    nama: 'Hazel Nur Hidayat',
-    jurusan: 'S1 Teknik Metalurgi',
+    id: 18,
+    nama: 'Naura Raya',
+    jurusan: 'S1 Ilmu Gizi',
     kampus: 'Universitas Sultan Ageng Tirtayasa',
-    kota: 'Cilegon',
+    kota: 'Serang',
     angkatan: 2025,
     foto: 'https://ui-avatars.com/api/?name=Hzaki+Namadhan&background=1A4D3E&color=F7F5F0&size=160',
   },

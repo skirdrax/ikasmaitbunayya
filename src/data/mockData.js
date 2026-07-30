@@ -42,8 +42,8 @@ export const pins = [
     left: '29%',
     topMobile: '72%',
     leftMobile: '25%',
-    count: 4,
-    campus: 'Unpad, UIN Bandung, Polindra, & Unsil',
+    count: 5,
+    campus: 'Unpad, UIN Bandung, Polindra, ISBI,& Unsil',
   },
   {
     city: 'Jawa Tengah',

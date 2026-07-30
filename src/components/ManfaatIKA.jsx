@@ -27,7 +27,7 @@ export default function ManfaatIKA() {
       <div className="container">
         <div className="section-head">
           <div className="eyebrow orange">Manfaat IKA</div>
-          <h2>Manfaat Bergabung di IKA SMAIT Bunayya</h2>
+          <h2> IKA SMA IT Bunayya</h2>
           <p>
             Ikatan Alumni (IKA) SMAIT Bunayya hadir untuk memberikan manfaat
             nyata bagi seluruh alumni dan masyarakat

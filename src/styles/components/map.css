@@ -86,12 +86,13 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* ===== LABEL BANTEN, JAWA BARAT, JAWA TIMUR (DI BAWAH PIN) ===== */
+/* ===== LABEL DI BAWAH PIN (JAWA BARAT & JAWA TIMUR) ===== */
 .map-point:nth-child(5) .map-point-label,
 .map-point:nth-child(7) .map-point-label {
   top: auto;
   bottom: -18px;
 }
+
 /* ===== TOOLTIP ===== */
 .map-point-tooltip {
   position: absolute;
@@ -176,7 +177,6 @@
   }
 
   /* LABEL DI BAWAH TETAP DI BAWAH */
-  .map-point:nth-child(3) .map-point-label,
   .map-point:nth-child(5) .map-point-label,
   .map-point:nth-child(7) .map-point-label {
     top: auto;
@@ -213,7 +213,16 @@
   }
 
   .map-point-label {
-    display: none !important;
+    font-size: 7px;
+    top: -14px;
+    padding: 1px 4px;
+    display: block !important;
+  }
+
+  .map-point:nth-child(5) .map-point-label,
+  .map-point:nth-child(7) .map-point-label {
+    top: auto;
+    bottom: -14px;
   }
 
   .map-point-tooltip {

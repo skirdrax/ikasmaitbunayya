@@ -248,7 +248,7 @@ export const students = [
     kampus: 'Universitas Padjajaran',
     kota: 'Sumedang',
     angkatan: 2026,
-    foto: 'https://ui-avatars.com/api/?nameMDzaki+Aamadhan&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?name=MDzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
     id: 37,

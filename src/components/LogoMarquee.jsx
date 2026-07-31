@@ -22,7 +22,6 @@ export default function LogoMarquee() {
     { nama: 'UIN Jakarta', logo: '/assets/kampus/UINJ.png' },
     { nama: 'UIN Bandung', logo: '/assets/kampus/UINB.png' },
     { nama: 'UIN Purwokerto', logo: '/assets/kampus/UINP.png' },
-    { nama: 'Politeknik Negeri Malang', logo: '/assets/kampus/POLINEMA.png' },
     {
       nama: 'Politeknik Negeri Indramayu',
       logo: '/assets/kampus/POLINDRA.png',

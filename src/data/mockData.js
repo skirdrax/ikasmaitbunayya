@@ -60,8 +60,8 @@ export const pins = [
     left: '37%',
     topMobile: '71%',
     leftMobile: '37%',
-    count: 2,
-    campus: 'Unbraw & Polinema',
+    count: 1,
+    campus: 'Unbraw ',
   },
 ];
 // ============ DATA ANGKATAN ============
@@ -262,15 +262,6 @@ export const students = [
   // ===== ANGKATAN 3 (2026) - 10 ORANG =====
   {
     id: 35,
-    nama: 'Rendra Dwi  Dharmawan',
-    jurusan: 'D4 Keuangan',
-    kampus: 'Politeknik Negeri Malang',
-    kota: 'Malang',
-    angkatan: 2026,
-    foto: 'https://ui-avatars.com/api/?name=RDzaki+DRamadhan&background=1A4D3E&color=F7F5F0&size=160',
-  },
-  {
-    id: 36,
     nama: 'Mufid Abdurrahman',
     jurusan: 'S1 Agroteknologi',
     kampus: 'Universitas Padjajaran',
@@ -279,6 +270,16 @@ export const students = [
     foto: 'https://ui-avatars.com/api/?name=MDzaki+Ramadhan&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
+    id: 36,
+    nama: 'Rendra Dwi  Dharmawan',
+    jurusan: 'Bekerja',
+    kampus: '',
+    kota: 'Tangerang',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=RDzaki+DRamadhan&background=1A4D3E&color=F7F5F0&size=160',
+  },
+
+  {
     id: 37,
     nama: 'Muhammad Zidna Argi',
     jurusan: 'S1 Teknik Industri Pertanian ',
@@ -286,6 +287,52 @@ export const students = [
     kota: 'Malang',
     angkatan: 2026,
     foto: 'https://ui-avatars.com/api/?name=MDzaki+ZRamadhan&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 38,
+    nama: 'Annisa',
+    jurusan: 'Pendidikan Sosiologi dan Antropologi',
+    kampus: 'Universitas Negeri Semarang',
+    kota: 'Semarang',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=Annisa&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 39,
+    nama: 'Berlian',
+    jurusan: 'Manajemen',
+    kampus: 'Universitas Terbuka',
+    kota: '-',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=Berlian&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 40,
+    nama: 'Rafif',
+    jurusan: 'Belum diketahui',
+    kampus: 'Belum diketahui',
+    kota: '-',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=Rafif&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 41,
+    nama: 'Mutia',
+    jurusan: 'Teknik Kimia',
+    kampus: 'Universitas Lampung (UNILA)',
+    kota: 'Bandar Lampung',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=Mutia&background=1A4D3E&color=F7F5F0&size=160',
+  },
+
+  {
+    id: 42,
+    nama: 'Thoriq',
+    jurusan: 'Pendidikan Agama Islam',
+    kampus: 'UIN Salatiga',
+    kota: 'Salatiga',
+    angkatan: 2026,
+    foto: 'https://ui-avatars.com/api/?name=Thoriq&background=1A4D3E&color=F7F5F0&size=160',
   },
 ];
 

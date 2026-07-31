@@ -37,10 +37,16 @@ function App() {
         />
         <meta
           name="keywords"
-          content="IKA SMAIT Bunayya, Alumni Bunayya, SMA IT Bunayya,SMAIT BUNAYYA, Smait Bunayya, smait bunayya, Ikatan Alumni, Silaturahmi Alumni"
+          content="IKA SMAIT Bunayya, Alumni Bunayya, SMA IT Bunayya, SMAIT BUNAYYA, Smait Bunayya, smait bunayya, Ikatan Alumni, Silaturahmi Alumni"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="IKA SMAIT Bunayya" />
+
+        {/* ===== Google Site Verification ===== */}
+        <meta
+          name="google-site-verification"
+          content="zkj8PKbo_BafZdgfBaR3frObEAG2Y-FqqnMKuuNvHtY"
+        />
 
         {/* ===== Open Graph (Facebook, WhatsApp, LinkedIn) ===== */}
         <meta

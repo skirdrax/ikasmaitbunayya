@@ -230,23 +230,24 @@ export const students = [
     angkatan: 2025,
     foto: 'https://ui-avatars.com/api/?name=Hazel+Nur+Hidayat&background=1A4D3E&color=F7F5F0&size=160',
   },
+
   {
     id: 16,
-    nama: 'Lira Amelia Felisha',
-    jurusan: 'D3 Akuntansi',
-    kampus: 'Universitas Sultan Ageng Tirtayasa',
-    kota: 'Serang',
-    angkatan: 2025,
-    foto: 'https://ui-avatars.com/api/?name=Lira+Amelia+Felisha&background=1A4D3E&color=F7F5F0&size=160',
-  },
-  {
-    id: 17,
     nama: 'Jasmine Baby Alika',
     jurusan: 'S1 Ilmu Komunikasi',
     kampus: 'Universitas Jendral Soedriman',
     kota: 'Purwokerto',
     angkatan: 2025,
     foto: 'https://ui-avatars.com/api/?name=Jasmine+Baby+Alika&background=1A4D3E&color=F7F5F0&size=160',
+  },
+  {
+    id: 17,
+    nama: 'Lira Amelia Felisha',
+    jurusan: 'D3 Akuntansi',
+    kampus: 'Universitas Sultan Ageng Tirtayasa',
+    kota: 'Serang',
+    angkatan: 2025,
+    foto: 'https://ui-avatars.com/api/?name=Lira+Amelia+Felisha&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
     id: 18,

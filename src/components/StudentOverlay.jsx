@@ -45,15 +45,15 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
   // ===== DATA FLIPHTML5 PER ANGKATAN =====
   const flipData = {
     1: {
-      title: 'Buku Tahunan Sekolah',
+      title: 'Buku Tahunan Sekolah - Angkatan 1',
       url: 'https://online.fliphtml5.com/izvhs/yice/',
     },
     2: {
-      title: 'Buku Tahunan Sekolah',
+      title: 'Buku Tahunan Sekolah - Angkatan 2',
       url: 'https://online.fliphtml5.com/izvhs/BTS-Angkatan-2-smait-bunayya/',
     },
     3: {
-      title: 'Buku Tahunan Sekolah',
+      title: 'Buku Tahunan Sekolah - Angkatan 3',
       url: 'https://online.fliphtml5.com/izvhs/BTS-angkatan-3-2026/',
     },
   };
@@ -178,7 +178,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
                   allowFullScreen
                   loading="lazy"
                 />
-                {/* ===== TOMBOL PERBESAR ===== */}
+                {/* ===== TOMBOL PERBESAR (UNTUK SEMUA ANGKATAN) ===== */}
                 <button
                   className="fliphtml5-zoom-btn"
                   onClick={toggleFullscreen}
@@ -214,7 +214,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
       </div>
 
       {/* ========================================== */}
-      {/* ===== FULLSCREEN MODAL BTS ===== */}
+      {/* ===== FULLSCREEN MODAL BTS (SEMUA ANGKATAN) ===== */}
       {/* ========================================== */}
       {isFullscreen && hasFlip && (
         <div

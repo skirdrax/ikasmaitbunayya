@@ -56,10 +56,6 @@ export default function KampusAlumni() {
       logo: '/assets/kampus/UINP.png',
     },
     {
-      nama: 'Politeknik Negeri Malang',
-      logo: '/assets/kampus/POLINEMA.png',
-    },
-    {
       nama: 'Politeknik Negeri Indramayu',
       logo: '/assets/kampus/POLINDRA.png',
     },

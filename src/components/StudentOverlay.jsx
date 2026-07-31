@@ -47,7 +47,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
     },
     2: {
       title: 'Buku Tahunan Sekolah',
-      url: '',
+      url: 'https://online.fliphtml5.com/izvhs/BTS-Angkatan-2-smait-bunayya/',
     },
     3: {
       title: 'Buku Tahunan Sekolah',

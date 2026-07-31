@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="footer-col">
           <h5>Kontak</h5>
           <a href="mailto:tu@smaitbunayya.sch.id">smaitbunayya.sch.id</a>
-          <a href="tel:0218765432">(021) 8765-4321</a>
+          <a href="tel:0218765432">000000000</a>
           <a href="#"> Kota Tangerang</a>
         </div>
       </div>

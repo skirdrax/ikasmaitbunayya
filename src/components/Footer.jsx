@@ -47,7 +47,7 @@ export default function Footer() {
           <a href="#beranda">Beranda</a>
           <a href="#peta">Peta Sebaran</a>
           <a href="#direktori">Direktori Angkatan</a>
-          <a href="#galeri">Galeri</a>
+          <a href="#kampus">Kampus</a>
         </div>
 
         <div className="footer-col">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MapSection from './components/MapSection';
@@ -27,6 +28,63 @@ function App() {
 
   return (
     <>
+      {/* ===== SEO & SOCIAL SHARE ===== */}
+      <Helmet>
+        <title>IKA SMAIT Bunayya - Ikatan Alumni SMA IT Bunayya</title>
+        <meta
+          name="description"
+          content="Ikatan Alumni SMAIT Bunayya. Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya dari setiap angkatan."
+        />
+        <meta
+          name="keywords"
+          content="IKA SMAIT Bunayya, Alumni Bunayya, SMA IT Bunayya,SMAIT BUNAYYA, Smait Bunayya, smait bunayya, Ikatan Alumni, Silaturahmi Alumni"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="IKA SMAIT Bunayya" />
+
+        {/* ===== Open Graph (Facebook, WhatsApp, LinkedIn) ===== */}
+        <meta
+          property="og:title"
+          content="IKA SMAIT Bunayya - Ikatan Alumni SMA IT Bunayya"
+        />
+        <meta
+          property="og:description"
+          content="Ikatan Alumni SMAIT Bunayya. Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya dari setiap angkatan."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ika-smaitbunayya.web.id" />
+        <meta
+          property="og:image"
+          content="https://ika-smaitbunayya.web.id/og-image.jpg"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="IKA SMAIT Bunayya" />
+        <meta property="og:locale" content="id_ID" />
+
+        {/* ===== Twitter Card ===== */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="IKA SMAIT Bunayya - Ikatan Alumni SMA IT Bunayya"
+        />
+        <meta
+          name="twitter:description"
+          content="Ikatan Alumni SMAIT Bunayya. Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya."
+        />
+        <meta
+          name="twitter:image"
+          content="https://ika-smaitbunayya.web.id/og-image.jpg"
+        />
+
+        {/* ===== Canonical URL ===== */}
+        <link rel="canonical" href="https://ika-smaitbunayya.web.id" />
+
+        {/* ===== Favicon ===== */}
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+      </Helmet>
+
       <Navbar onSaranClick={() => setShowSaranPage(true)} />
       <Hero onSearchResult={handleSearchResult} />
       <MapSection />

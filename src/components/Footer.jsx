@@ -14,14 +14,14 @@ export default function Footer() {
               </svg>
             </div>
             <div>
-              IKA SMANAYA
+              IKA SMA IT BUNAYYA
               <small
                 style={{
                   color: '#c9a96e',
                   fontSize: '10px',
                   display: 'block',
                 }}>
-                Ikatan Alumni SMA IT BUNAYYA
+                Ikatan Keluarga Alumni SMA IT BUNAYYA
               </small>
             </div>
           </div>
@@ -52,16 +52,9 @@ export default function Footer() {
 
         <div className="footer-col">
           <h5>Kontak</h5>
-          <a href="mailto:tu@smaitbunayya.sch.id">tu@smaitbunayya.sch.id</a>
+          <a href="mailto:tu@smaitbunayya.sch.id">smaitbunayya.sch.id</a>
           <a href="tel:0218765432">(021) 8765-4321</a>
-          <a href="#">Jl. Pendidikan No. 1, Depok</a>
-        </div>
-
-        <div className="footer-col">
-          <h5>Lainnya</h5>
-          <a href="#">Program Beasiswa</a>
-          <a href="#">Login Alumni</a>
-          <a href="#">Karir</a>
+          <a href="#"> Kota Tangerang</a>
         </div>
       </div>
 
@@ -69,7 +62,6 @@ export default function Footer() {
         <span>
           © 2026 Ikatan Alumni SMA IT Bunayya. Seluruh hak dilindungi.
         </span>
-        <span>Dibangun dengan Solidaritas</span>
       </div>
     </footer>
   );

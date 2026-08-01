@@ -1,28 +1,25 @@
 import { useState, useEffect } from 'react';
 
 export default function VisitorCounter() {
-  const [views, setViews] = useState(0);
+  const [views, setViews] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchViews = async () => {
       try {
-        // Ganti 'ikasmaitbunayya' jadi nama unik kamu
+        // PAKAI API INI PASTI JALAN
         const response = await fetch(
           'https://api.countapi.xyz/hit/ikasmaitbunayya/visitors',
         );
         const data = await response.json();
 
-        if (data && data.value) {
-          setViews(data.value);
-        }
+        console.log('✅ Data dari API:', data); // Cek di console
+        setViews(data.value);
       } catch (error) {
-        console.log('API error:', error);
-        // Kalo error, tetap pake data terakhir dari localStorage
+        console.error('❌ Error:', error);
+        // Fallback
         const saved = localStorage.getItem('ika_bunayya_views');
-        if (saved) {
-          setViews(parseInt(saved));
-        }
+        setViews(saved ? parseInt(saved) : 0);
       } finally {
         setLoading(false);
       }
@@ -31,18 +28,19 @@ export default function VisitorCounter() {
     fetchViews();
   }, []);
 
-  const formatNumber = (num) => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  };
-
   if (loading) {
     return <div className="visitor-counter">Loading...</div>;
   }
 
   return (
     <div className="visitor-counter">
-      <div className="visitor-header">Visitor Counter</div>
-      <div className="visitor-value">{formatNumber(views)}</div>
+      <div className="visitor-header">
+        <span className="visitor-title">Visitor Counter</span>
+      </div>
+      <div className="visitor-item">
+        <span className="visitor-label">Total Visitors</span>
+        <span className="visitor-value">{views?.toLocaleString() || 0}</span>
+      </div>
     </div>
   );
 }

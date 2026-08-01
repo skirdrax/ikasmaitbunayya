@@ -234,24 +234,15 @@ export default function Hero({ onSearchResult }) {
 
           {/* ===== COUNTERS ===== */}
           <div className="counters" ref={counterRef}>
-            <div
-              className="counter-card"
-              data-aos="flip-up"
-              data-aos-delay="250">
+            <div className="counter-card">
               <div className="num">{counts.alumni.toLocaleString()}+</div>
               <div className="label">Alumni Terdaftar</div>
             </div>
-            <div
-              className="counter-card"
-              data-aos="flip-up"
-              data-aos-delay="350">
+            <div className="counter-card">
               <div className="num">{counts.pt}+</div>
               <div className="label">Perguruan Tinggi</div>
             </div>
-            <div
-              className="counter-card"
-              data-aos="flip-up"
-              data-aos-delay="450">
+            <div className="counter-card">
               <div className="num">{counts.kota}+</div>
               <div className="label">Kota Sebaran</div>
             </div>
@@ -259,7 +250,7 @@ export default function Hero({ onSearchResult }) {
         </div>
 
         {/* ===== LOGO MARQUEE ===== */}
-        <div data-aos="fade-up" data-aos-delay="500">
+        <div>
           <LogoMarquee />
         </div>
       </div>

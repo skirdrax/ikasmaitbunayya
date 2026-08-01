@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react';
 
 export default function VisitorCounter() {
-  const [views, setViews] = useState(null);
+  const [views, setViews] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchViews = async () => {
       try {
+        // Ganti 'ikasmaitbunayya' jadi nama unik kamu
         const response = await fetch(
-          'https://api.countapi.xyz/hit/ikasmaitbunayya2026/visitors',
+          'https://api.countapi.xyz/hit/ikasmaitbunayya/visitors',
         );
         const data = await response.json();
-        setViews(data.value);
+
+        if (data && data.value) {
+          setViews(data.value);
+        }
       } catch (error) {
-        console.error('Gagal ambil data:', error);
+        console.log('API error:', error);
+        // Kalo error, tetap pake data terakhir dari localStorage
         const saved = localStorage.getItem('ika_bunayya_views');
-        setViews(saved ? parseInt(saved) : 0);
+        if (saved) {
+          setViews(parseInt(saved));
+        }
       } finally {
         setLoading(false);
       }
@@ -25,29 +32,17 @@ export default function VisitorCounter() {
   }, []);
 
   const formatNumber = (num) => {
-    if (num === null || num === undefined) return '0';
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   };
 
   if (loading) {
-    return (
-      <div className="visitor-counter">
-        <div className="visitor-loading">Loading...</div>
-      </div>
-    );
+    return <div className="visitor-counter">Loading...</div>;
   }
 
   return (
     <div className="visitor-counter">
-      <div className="visitor-header">
-        <span className="visitor-title">Visitor Counter</span>
-      </div>
-      <div className="visitor-stats">
-        <div className="visitor-item">
-          <span className="visitor-label">Total Visitors</span>
-          <span className="visitor-value">{formatNumber(views)}</span>
-        </div>
-      </div>
+      <div className="visitor-header">Visitor Counter</div>
+      <div className="visitor-value">{formatNumber(views)}</div>
     </div>
   );
 }

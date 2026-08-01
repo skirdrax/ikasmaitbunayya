@@ -51,17 +51,12 @@ export default function ManfaatIKA() {
         {/* ===== LAYOUT KIRI-KANAN TETAP ===== */}
         <div className="manfaat-layout" data-aos="fade-up" data-aos-delay="150">
           {/* ===== SISI KIRI: MENU ===== */}
-          <div
-            className="manfaat-sidebar"
-            data-aos="fade-right"
-            data-aos-delay="200">
+          <div className="manfaat-sidebar">
             {manfaatList.map((item, index) => (
               <div
                 key={item.id}
                 className={`manfaat-menu ${activeIndex === index ? 'active' : ''}`}
-                onClick={() => setActiveIndex(index)}
-                data-aos="fade-right"
-                data-aos-delay={200 + index * 50}>
+                onClick={() => setActiveIndex(index)}>
                 <span className="manfaat-menu-title">{item.title}</span>
                 <span className="manfaat-menu-arrow">→</span>
               </div>

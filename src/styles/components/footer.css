@@ -26,6 +26,7 @@ footer {
   max-width: 300px;
   color: rgba(255, 255, 255, 0.8);
 }
+
 .footer-col h5 {
   color: #fff;
   font-size: 13px;
@@ -34,6 +35,7 @@ footer {
   letter-spacing: 0.06em;
   margin-bottom: 16px;
 }
+
 .footer-col a {
   display: block;
   font-size: 14px;
@@ -41,6 +43,7 @@ footer {
   color: rgba(255, 255, 255, 0.7);
   transition: color var(--transition);
 }
+
 .footer-col a:hover {
   color: var(--gold);
 }
@@ -50,6 +53,7 @@ footer {
   gap: 12px;
   margin-top: 16px;
 }
+
 .footer-social a {
   width: 38px;
   height: 38px;
@@ -62,6 +66,7 @@ footer {
   font-size: 16px;
   color: white;
 }
+
 .footer-social a:hover {
   background: var(--gold);
   color: var(--forest);
@@ -96,13 +101,12 @@ footer {
 .visitor-counter {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 12px 16px;
-  min-width: 160px;
+  border-radius: 10px;
+  padding: 12px 18px;
+  min-width: 150px;
   backdrop-filter: blur(4px);
   transition: all 0.3s ease;
   width: 100%;
-  text-align: center;
 }
 
 .visitor-counter:hover {
@@ -110,21 +114,49 @@ footer {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.visitor-counter img {
-  max-width: 100% !important;
-  height: auto !important;
+.visitor-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
 }
 
-.visitor-counter a {
-  color: rgba(255, 255, 255, 0.4) !important;
-  font-size: 10px !important;
-  text-decoration: none !important;
-  display: block;
-  margin-top: 4px;
+.visitor-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.visitor-counter a:hover {
-  color: var(--gold) !important;
+.visitor-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.visitor-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.visitor-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.visitor-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.visitor-loading {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  padding: 4px 0;
+  text-align: center;
 }
 
 /* ======================================== */
@@ -151,10 +183,14 @@ footer {
 
   .visitor-counter {
     min-width: 100%;
-    padding: 10px 12px;
+    padding: 10px 14px;
   }
 
   .visitor-col {
     align-items: center;
+  }
+
+  .visitor-value {
+    font-size: 16px;
   }
 }

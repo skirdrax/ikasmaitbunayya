@@ -14,7 +14,6 @@ export default function VisitorCounter() {
         setViews(data.value);
       } catch (error) {
         console.error('Gagal ambil data:', error);
-        // Fallback ke localStorage
         const saved = localStorage.getItem('ika_bunayya_views');
         setViews(saved ? parseInt(saved) : 0);
       } finally {

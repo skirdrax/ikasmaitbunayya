@@ -28,3 +28,32 @@
 section[id] {
   scroll-margin-top: 76px;
 }
+
+/* ===== FIX OVERFLOW DI HP ===== */
+@media (max-width: 640px) {
+  /* HANYA TAMBAHKAN INI */
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  #root {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* PERBAIKI ELEMEN YANG KELUAR */
+  .visitor-counter-wrapper {
+    overflow: hidden !important;
+  }
+
+  .visitor-badge-link img {
+    max-width: 130px !important;
+    height: 22px !important;
+  }
+
+  .visitor-badge {
+    max-width: 55% !important;
+  }
+}

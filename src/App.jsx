@@ -51,7 +51,7 @@ function App() {
         {/* ===== Open Graph (Facebook, WhatsApp, LinkedIn) ===== */}
         <meta
           property="og:title"
-          content="IKA SMAIT Bunayya - Ikatan Alumni SMA IT Bunayya"
+          content="IKA SMAIT Bunayya - Ikatan Keluarga Alumni SMA IT Bunayya"
         />
         <meta
           property="og:description"

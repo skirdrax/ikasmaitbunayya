@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function ManfaatIKA() {
   const manfaatList = [
@@ -26,10 +28,19 @@ export default function ManfaatIKA() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+      easing: 'ease-out-cubic',
+    });
+  }, []);
+
   return (
     <section className="section" id="manfaat">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-aos="fade-up" data-aos-delay="0">
           <div className="eyebrow orange">Manfaat IKA</div>
           <h2>IKA SMA IT Bunayya</h2>
           <p>
@@ -38,14 +49,19 @@ export default function ManfaatIKA() {
         </div>
 
         {/* ===== LAYOUT KIRI-KANAN TETAP ===== */}
-        <div className="manfaat-layout">
+        <div className="manfaat-layout" data-aos="fade-up" data-aos-delay="150">
           {/* ===== SISI KIRI: MENU ===== */}
-          <div className="manfaat-sidebar">
+          <div
+            className="manfaat-sidebar"
+            data-aos="fade-right"
+            data-aos-delay="200">
             {manfaatList.map((item, index) => (
               <div
                 key={item.id}
                 className={`manfaat-menu ${activeIndex === index ? 'active' : ''}`}
-                onClick={() => setActiveIndex(index)}>
+                onClick={() => setActiveIndex(index)}
+                data-aos="fade-right"
+                data-aos-delay={200 + index * 50}>
                 <span className="manfaat-menu-title">{item.title}</span>
                 <span className="manfaat-menu-arrow">→</span>
               </div>
@@ -53,7 +69,10 @@ export default function ManfaatIKA() {
           </div>
 
           {/* ===== SISI KANAN: DETAIL ===== */}
-          <div className="manfaat-detail">
+          <div
+            className="manfaat-detail"
+            data-aos="fade-left"
+            data-aos-delay="300">
             <h3>{manfaatList[activeIndex].title}</h3>
             <p>{manfaatList[activeIndex].desc}</p>
           </div>

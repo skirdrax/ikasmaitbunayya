@@ -1,10 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { batches, students } from '../data/mockData.js';
 
 export default function BatchDirectory({ onSelectBatch }) {
   const getStudentCount = (tahun) => {
     return students.filter((s) => s.angkatan === tahun).length;
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+      easing: 'ease-out-cubic',
+    });
+  }, []);
 
   // State untuk tracking loading setiap batch
   const [imageLoading, setImageLoading] = useState({});
@@ -22,7 +33,7 @@ export default function BatchDirectory({ onSelectBatch }) {
   return (
     <section className="section directory-section" id="direktori">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-aos="fade-up" data-aos-delay="0">
           <div className="eyebrow orange">Direktori Angkatan</div>
           <h2>Temukan Angkatanmu, Temukan Kawan Lama</h2>
           <p>
@@ -32,13 +43,18 @@ export default function BatchDirectory({ onSelectBatch }) {
         </div>
 
         <div className="batch-grid">
-          {batches.map((b) => {
+          {batches.map((b, index) => {
             const jumlahSiswa = getStudentCount(b.tahun);
-            const isLoading = imageLoading[b.id] !== false; // default true
+            const isLoading = imageLoading[b.id] !== false;
             const hasError = imageError[b.id] || false;
+            const delay = 100 + index * 80;
 
             return (
-              <div className="batch-card" key={b.id}>
+              <div
+                className="batch-card"
+                key={b.id}
+                data-aos="flip-up"
+                data-aos-delay={delay}>
                 <div className="batch-photo">
                   <span className="batch-tag">{b.tahun}</span>
 

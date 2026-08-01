@@ -1,8 +1,19 @@
 import { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { pins } from '../data/mockData.js';
 
 export default function MapSection() {
   const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+      easing: 'ease-out-cubic',
+    });
+  }, []);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -30,14 +41,14 @@ export default function MapSection() {
   return (
     <section className="section" id="peta">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" data-aos="fade-up" data-aos-delay="0">
           <div className="eyebrow orange">Peta Sebaran</div>
           <h2>Alumni Tersebar di Seluruh Indonesia</h2>
-          <p>Alumni SMAIT Bunayya di berbagai Provinsi </p>
+          <p>Alumni SMAIT Bunayya di berbagai Provinsi</p>
         </div>
 
-        <div className="map-simple">
-          <div className="map-title">
+        <div className="map-simple" data-aos="fade-up" data-aos-delay="150">
+          <div className="map-title" data-aos="fade-down" data-aos-delay="100">
             PETA SEBARAN ALUMNI SMA IT BUNAYYA DI INDONESIA
           </div>
 
@@ -50,10 +61,13 @@ export default function MapSection() {
 
             {pins.map((pin, i) => {
               const pos = getPinPosition(pin);
+              const delay = 100 + i * 50;
               return (
                 <div
                   key={i}
                   className="map-point"
+                  data-aos="zoom-in"
+                  data-aos-delay={delay}
                   style={{
                     top: pos.top,
                     left: pos.left,
@@ -72,7 +86,10 @@ export default function MapSection() {
             })}
           </div>
 
-          <div className="map-legend-simple">
+          <div
+            className="map-legend-simple"
+            data-aos="fade-up"
+            data-aos-delay="500">
             <span className="legend-dot"></span>
             <span>Sebaran Alumni</span>
           </div>

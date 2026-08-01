@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { students } from '../data/mockData.js';
 import LogoMarquee from './LogoMarquee';
 
@@ -7,12 +9,22 @@ export default function Hero({ onSearchResult }) {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
-  const [showNotFound, setShowNotFound] = useState(false); // ← STATE POPUP
+  const [showNotFound, setShowNotFound] = useState(false);
 
   // ===== COUNTER ANIMASI =====
   const [counts, setCounts] = useState({ alumni: 0, pt: 0, kota: 0 });
   const counterRef = useRef(null);
   const hasAnimated = useRef(false);
+
+  // ===== INIT AOS =====
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+      easing: 'ease-out-cubic',
+    });
+  }, []);
 
   useEffect(() => {
     const targetAlumni = 40;
@@ -64,7 +76,7 @@ export default function Hero({ onSearchResult }) {
 
     setQuery(value);
     setSelectedStudent(null);
-    setShowNotFound(false); // HIDE POPUP
+    setShowNotFound(false);
 
     if (value.length > 0) {
       const searchTerm = value.toLowerCase();
@@ -80,7 +92,6 @@ export default function Hero({ onSearchResult }) {
     }
   };
 
-  // ===== PILIH SUGGESTION → ISI INPUT =====
   const handleSelectSuggestion = (student) => {
     setQuery(student.nama);
     setSelectedStudent(student);
@@ -89,7 +100,6 @@ export default function Hero({ onSearchResult }) {
     setShowNotFound(false);
   };
 
-  // ===== TOMBOL CARI → BUKA MODAL =====
   const handleSearchSubmit = (e) => {
     e.preventDefault();
 
@@ -123,11 +133,10 @@ export default function Hero({ onSearchResult }) {
       setSelectedStudent(null);
       setShowNotFound(false);
     } else {
-      // TAMPILKAN POPUP NOT FOUND
       setShowNotFound(true);
       setTimeout(() => {
         setShowNotFound(false);
-      }, 3000); // Hilang otomatis setelah 3 detik
+      }, 3000);
     }
   };
 
@@ -135,9 +144,16 @@ export default function Hero({ onSearchResult }) {
     <section className="hero" id="beranda">
       <div className="hero-inner">
         <div className="hero-content">
-          <div className="eyebrow">Ikatan Alumni SMA IT Bunayya</div>
+          {/* ===== EYEBROW ===== */}
+          <div className="eyebrow" data-aos="fade-down" data-aos-delay="0">
+            Ikatan Alumni SMA IT Bunayya
+          </div>
 
-          <div className="search-wrapper">
+          {/* ===== SEARCH BAR ===== */}
+          <div
+            className="search-wrapper"
+            data-aos="fade-up"
+            data-aos-delay="100">
             <form className="search-bar" onSubmit={handleSearchSubmit}>
               <svg
                 width="19"
@@ -204,33 +220,48 @@ export default function Hero({ onSearchResult }) {
             )}
           </div>
 
-          <h1>
+          {/* ===== TITLE ===== */}
+          <h1 data-aos="fade-up" data-aos-delay="150">
             Menjalin <span className="accent">Silaturahmi</span>,<br />
             Mengabdi untuk Bangsa
           </h1>
 
-          <p className="lead">
+          {/* ===== SUBTITLE ===== */}
+          <p className="lead" data-aos="fade-up" data-aos-delay="200">
             Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya
             dari setiap angkatan — tersebar di seluruh Indonesia
           </p>
 
+          {/* ===== COUNTERS ===== */}
           <div className="counters" ref={counterRef}>
-            <div className="counter-card">
+            <div
+              className="counter-card"
+              data-aos="flip-up"
+              data-aos-delay="250">
               <div className="num">{counts.alumni.toLocaleString()}+</div>
               <div className="label">Alumni Terdaftar</div>
             </div>
-            <div className="counter-card">
+            <div
+              className="counter-card"
+              data-aos="flip-up"
+              data-aos-delay="350">
               <div className="num">{counts.pt}+</div>
               <div className="label">Perguruan Tinggi</div>
             </div>
-            <div className="counter-card">
+            <div
+              className="counter-card"
+              data-aos="flip-up"
+              data-aos-delay="450">
               <div className="num">{counts.kota}+</div>
               <div className="label">Kota Sebaran</div>
             </div>
           </div>
         </div>
 
-        <LogoMarquee />
+        {/* ===== LOGO MARQUEE ===== */}
+        <div data-aos="fade-up" data-aos-delay="500">
+          <LogoMarquee />
+        </div>
       </div>
 
       {/* ===== POPUP NOT FOUND ===== */}

@@ -1,13 +1,13 @@
 export default function VisitorCounter() {
   return (
     <div className="visitor-counter-wrapper">
-      {/* ===== KIRI: LABEL ===== */}
-      <div className="visitor-label">
+      {/* ===== LABEL DI ATAS ===== */}
+      <div className="visitor-label-top">
         <span>Pengunjung</span>
       </div>
 
-      {/* ===== KANAN: BADGE ===== */}
-      <div className="visitor-badge">
+      {/* ===== BADGE DI BAWAH ===== */}
+      <div className="visitor-badge-bottom">
         <a
           href="https://visitorbadge.io/status?path=ika-smaitbunayya.web.id"
           target="_blank"

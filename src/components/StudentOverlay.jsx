@@ -7,6 +7,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
 
   // ===== STATE UNTUK SLIDE FOTO =====
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   // ===== STATE UNTUK FULLSCREEN BTS =====
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -76,6 +77,32 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
     return () => window.removeEventListener('popstate', handlePopState);
   }, [onBack]);
 
+  // ===== PRELOAD FOTO SAAT SLIDE BERUBAH =====
+  useEffect(() => {
+    // defer setting loading state to avoid synchronous setState inside effect
+    const defer = setTimeout(() => setIsLoading(true), 0);
+    let cancelled = false;
+    const img = new Image();
+    img.src = photoSlides[currentSlide];
+    img.onload = () => {
+      if (cancelled) return;
+      clearTimeout(defer);
+      setIsLoading(false);
+    };
+    img.onerror = () => {
+      if (cancelled) return;
+      clearTimeout(defer);
+      setIsLoading(false);
+    };
+    // if image loads immediately (from cache) we still want loading false
+    return () => {
+      cancelled = true;
+      clearTimeout(defer);
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, [currentSlide, photoSlides]);
+
   // ===== FUNGSI SLIDE =====
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % photoSlides.length);
@@ -129,7 +156,6 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           <div className="overlay-head">
             <div>
               <h2>Daftar Alumni— {batch?.label}</h2>
-              <p></p>
               <p>
                 Lulus tahun {batch?.tahun} · {studentsByBatch.length} alumni
               </p>
@@ -145,10 +171,17 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
                 ❮
               </button>
               <div className="photo-slide">
-                <img
-                  src={photoSlides[currentSlide]}
-                  alt={`Slide ${currentSlide + 1}`}
-                />
+                {isLoading ? (
+                  <div className="slide-loading">
+                    <div className="slide-spinner"></div>
+                    <span>Memuat foto...</span>
+                  </div>
+                ) : (
+                  <img
+                    src={photoSlides[currentSlide]}
+                    alt={`Slide ${currentSlide + 1}`}
+                  />
+                )}
                 <div className="slide-counter">
                   {currentSlide + 1} / {photoSlides.length}
                 </div>
@@ -178,7 +211,6 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
                   allowFullScreen
                   loading="lazy"
                 />
-                {/* ===== TOMBOL PERBESAR (UNTUK SEMUA ANGKATAN) ===== */}
                 <button
                   className="fliphtml5-zoom-btn"
                   onClick={toggleFullscreen}
@@ -214,7 +246,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
       </div>
 
       {/* ========================================== */}
-      {/* ===== FULLSCREEN MODAL BTS (SEMUA ANGKATAN) ===== */}
+      {/* ===== FULLSCREEN MODAL BTS ===== */}
       {/* ========================================== */}
       {isFullscreen && hasFlip && (
         <div

@@ -21,6 +21,20 @@ function App() {
     setSelectedStudent(student);
   };
 
+  // ===== FUNGSI BALIK KE DIREKTORI =====
+  const handleBackToDirectory = () => {
+    setSelectedBatch(null);
+    // Hapus class overlay-open dari body
+    document.body.classList.remove('overlay-open');
+    // Scroll ke direktori dengan smooth
+    setTimeout(() => {
+      const direktoriSection = document.getElementById('direktori');
+      if (direktoriSection) {
+        direktoriSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 150);
+  };
+
   // Jika halaman Saran aktif, tampilkan itu saja
   if (showSaranPage) {
     return <SaranPage onBack={() => setShowSaranPage(false)} />;
@@ -102,7 +116,7 @@ function App() {
       {selectedBatch && (
         <StudentOverlay
           batchId={selectedBatch}
-          onBack={() => setSelectedBatch(null)}
+          onBack={handleBackToDirectory}
           onSelectStudent={setSelectedStudent}
         />
       )}

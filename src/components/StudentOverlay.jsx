@@ -77,6 +77,16 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
     return () => window.removeEventListener('popstate', handlePopState);
   }, [onBack]);
 
+  // ===== SEMBUNYIKAN NAVBAR SAAT OVERLAY TERBUKA =====
+  useEffect(() => {
+    // Tambahkan class ke body
+    document.body.classList.add('overlay-open');
+
+    return () => {
+      document.body.classList.remove('overlay-open');
+    };
+  }, []);
+
   // ===== PRELOAD FOTO SAAT SLIDE BERUBAH =====
   useEffect(() => {
     const img = new Image();

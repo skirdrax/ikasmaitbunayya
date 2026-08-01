@@ -1,4 +1,7 @@
-/* ===== DIRECTORY ===== */
+/* ======================================== */
+/* ===== BATCH DIRECTORY ===== */
+/* ======================================== */
+
 .directory-section {
   background: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.04);
@@ -20,22 +23,28 @@
   display: flex;
   flex-direction: column;
 }
+
 .batch-card:hover {
   transform: translateY(-6px);
   background: #ffffff;
   box-shadow: var(--shadow-lift);
 }
 
+/* ===== BATCH PHOTO ===== */
 .batch-photo {
   height: 160px;
   overflow: hidden;
   position: relative;
+  background: #e8ecf0;
 }
+
 .batch-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.5s ease;
 }
+
 .batch-photo::after {
   content: '';
   position: absolute;
@@ -45,6 +54,8 @@
     rgba(0, 0, 0, 0) 50%,
     rgba(26, 77, 62, 0.4) 100%
   );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .batch-tag {
@@ -60,17 +71,65 @@
   z-index: 2;
 }
 
+/* ===== LOADING SPINNER DI BATCH ===== */
+.batch-photo-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8ecf0;
+  z-index: 1;
+}
+
+.batch-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(201, 169, 110, 0.2);
+  border-top: 3px solid #c9a96e;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== ERROR STATE ===== */
+.batch-photo-error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  z-index: 1;
+}
+
+.batch-photo-error span {
+  font-size: 32px;
+  opacity: 0.5;
+}
+
+/* ===== BATCH BODY ===== */
 .batch-body {
   padding: 20px 22px 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+
 .batch-body h3 {
   font-size: 20px;
   font-weight: 600;
   color: var(--ink);
 }
+
 .batch-stats {
   display: flex;
   gap: 20px;
@@ -78,13 +137,68 @@
   font-size: 13px;
   color: var(--ink-soft);
 }
+
 .batch-stats b {
   color: var(--ink);
   display: block;
   font-size: 16px;
   font-family: var(--serif);
 }
+
 .batch-body .btn {
   margin-top: 18px;
   align-self: flex-start;
+}
+
+/* ======================================== */
+/* ===== RESPONSIVE BATCH ===== */
+/* ======================================== */
+
+@media (max-width: 768px) {
+  .batch-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .batch-photo {
+    height: 140px;
+  }
+
+  .batch-body h3 {
+    font-size: 18px;
+  }
+
+  .batch-stats {
+    font-size: 12px;
+    gap: 16px;
+  }
+
+  .batch-stats b {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .batch-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .batch-photo {
+    height: 180px;
+  }
+
+  .batch-body {
+    padding: 16px 18px 20px;
+  }
+
+  .batch-body h3 {
+    font-size: 17px;
+  }
+
+  .batch-spinner {
+    width: 28px;
+    height: 28px;
+    border-width: 2px;
+  }
 }

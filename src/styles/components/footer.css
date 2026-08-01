@@ -122,17 +122,19 @@ footer {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== LABEL DI ATAS (KECIL) ===== */
-.visitor-label-top {
-  font-size: 10px;
+/* ===== BARIS ATAS: LABEL (SEDANG) ===== */
+.visitor-label-row {
+  font-size: 13px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  text-align: center;
+  width: 100%;
 }
 
-/* ===== BADGE DI BAWAH ===== */
-.visitor-badge-bottom {
+/* ===== BARIS BAWAH: BADGE ===== */
+.visitor-badge-row {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,12 +159,12 @@ footer {
 
 @media (max-width: 640px) {
   .visitor-counter-wrapper {
-    padding: 8px 12px;
+    padding: 8px 10px;
     gap: 2px;
   }
 
-  .visitor-label-top {
-    font-size: 9px;
+  .visitor-label-row {
+    font-size: 11px;
   }
 
   .visitor-badge-link img {

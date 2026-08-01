@@ -50,11 +50,7 @@ export default function BatchDirectory({ onSelectBatch }) {
             const delay = 100 + index * 80;
 
             return (
-              <div
-                className="batch-card"
-                key={b.id}
-                data-aos="flip-up"
-                data-aos-delay={delay}>
+              <div className="batch-card" key={b.id} data-aos-delay={delay}>
                 <div className="batch-photo">
                   <span className="batch-tag">{b.tahun}</span>
 

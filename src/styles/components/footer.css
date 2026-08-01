@@ -96,6 +96,9 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
 
 .visitor-counter-wrapper {
@@ -105,11 +108,13 @@ footer {
   padding: 10px 16px;
   backdrop-filter: blur(4px);
   transition: all 0.3s ease;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  overflow: hidden !important;
 }
 
 .visitor-counter-wrapper:hover {
@@ -117,7 +122,6 @@ footer {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== KIRI: LABEL ===== */
 .visitor-label {
   font-size: 13px;
   font-weight: 600;
@@ -125,28 +129,27 @@ footer {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.visitor-label span {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* ===== KANAN: BADGE ===== */
 .visitor-badge {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden !important;
 }
 
 .visitor-badge-link {
   display: inline-block;
   line-height: 1;
+  max-width: 100%;
+  overflow: hidden !important;
 }
 
 .visitor-badge-link img {
-  max-width: 100%;
+  max-width: 100% !important;
   height: auto !important;
   display: block;
   border-radius: 4px;
@@ -159,15 +162,28 @@ footer {
 @media (max-width: 640px) {
   .visitor-counter-wrapper {
     padding: 8px 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .visitor-label {
     font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .visitor-badge {
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 55%;
+  }
+
+  .visitor-badge-link img {
+    max-width: 130px !important;
+    height: 22px !important;
   }
 
   .visitor-col {
-    align-items: center;
+    align-items: stretch;
   }
 }

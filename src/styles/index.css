@@ -16,15 +16,89 @@
 @import './components/modal.css';
 @import './components/footer.css';
 @import './responsive.css';
-@import './components/manfaat.css'; /* ← TAMBAH */
+@import './components/manfaat.css';
 @import './components/marquee.css';
-@import './components/saran.css'; /* ← TAMBAHKAN INI */
+@import './components/saran.css';
 
-/* ===== BIAR BERANDA MENTOK ATAS ===== */
-#beranda {
-  scroll-margin-top: 0px !important;
+/* ======================================== */
+/* ===== FIX OVERFLOW DI HP (TOTAL) ===== */
+/* ======================================== */
+
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-section[id] {
-  scroll-margin-top: 76px;
+#root {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* ===== SEMUA ELEMEN GA BOLEH KELUAR ===== */
+* {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ===== CONTAINER DI HP ===== */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow: hidden !important;
+  }
+
+  /* ===== SEMUA ELEMEN YANG BISA OVERFLOW ===== */
+  .hero-inner,
+  .hero-content,
+  .search-wrapper,
+  .search-bar,
+  .counters,
+  .counter-card,
+  .map-simple,
+  .map-grid,
+  .batch-grid,
+  .batch-card,
+  .kampus-wrapper,
+  .kampus-grid,
+  .kampus-item,
+  .manfaat-layout,
+  .manfaat-sidebar,
+  .manfaat-detail,
+  .footer-top,
+  .footer-col,
+  .visitor-counter-wrapper,
+  .photo-slide-container,
+  .fliphtml5-container {
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* ===== FIX GRID DI HP ===== */
+  .batch-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .kampus-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)) !important;
+  }
+
+  .counters {
+    grid-template-columns: 1fr !important;
+    max-width: 260px !important;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    padding: 40px 16px 24px !important;
+  }
+
+  .manfaat-layout {
+    grid-template-columns: 1fr !important;
+  }
 }

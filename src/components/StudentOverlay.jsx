@@ -5,13 +5,14 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
   const batch = batches.find((b) => b.id === batchId);
   const studentsByBatch = students.filter((s) => s.angkatan === batch?.tahun);
 
-  // ===== STATE =====
+  // ===== STATE UNTUK SLIDE FOTO =====
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [imageError, setImageError] = useState(false);
+
+  // ===== STATE UNTUK FULLSCREEN BTS =====
   const [isFullscreen, setIsFullscreen] = useState(false);
 
-  // ===== DATA FOTO =====
+  // ===== DATA FOTO PER ANGKATAN (4 SLIDE MASING-MASING) =====
   const photoData = {
     1: [
       '/assets/angkatan1/1.jpg',
@@ -39,9 +40,10 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
     ],
   };
 
+  // ===== AMBIL FOTO SESUAI ANGKATAN (DEFAULT KE ANGKATAN 1) =====
   const photoSlides = photoData[batchId] || photoData[1];
 
-  // ===== DATA FLIPHTML5 =====
+  // ===== DATA FLIPHTML5 PER ANGKATAN =====
   const flipData = {
     1: {
       title: 'Buku Tahunan Sekolah - Angkatan 1',
@@ -57,10 +59,11 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
     },
   };
 
+  // ===== CEK APAKAH ANGKATAN PUNYA FLIPHTML5 =====
   const hasFlip = flipData[batchId] !== undefined;
   const currentFlip = hasFlip ? flipData[batchId] : null;
 
-  // ===== BACK BROWSER =====
+  // ===== TANGKAP TOMBOL BACK BROWSER =====
   useEffect(() => {
     window.history.pushState({ overlay: true }, '');
 
@@ -74,32 +77,15 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
     return () => window.removeEventListener('popstate', handlePopState);
   }, [onBack]);
 
-  // ===== PRELOAD FOTO =====
+  // ===== PRELOAD FOTO SAAT SLIDE BERUBAH =====
   useEffect(() => {
-    // avoid synchronous setState calls inside effect to prevent cascading renders
-    const initTimer = setTimeout(() => {
-      setIsLoading(true);
-      setImageError(false);
-    }, 0);
-
     const img = new Image();
     img.src = photoSlides[currentSlide];
-
     img.onload = () => {
       setIsLoading(false);
-      setImageError(false);
     };
-
     img.onerror = () => {
       setIsLoading(false);
-      setImageError(true);
-      console.error(`Gagal memuat gambar: ${photoSlides[currentSlide]}`);
-    };
-
-    return () => {
-      clearTimeout(initTimer);
-      img.onload = null;
-      img.onerror = null;
     };
   }, [currentSlide, photoSlides]);
 
@@ -119,7 +105,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
     setIsFullscreen(!isFullscreen);
   };
 
-  // ===== ESC FULLSCREEN =====
+  // ===== TUTUP FULLSCREEN DENGAN ESC =====
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key === 'Escape' && isFullscreen) {
@@ -155,7 +141,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           {/* ===== JUDUL ===== */}
           <div className="overlay-head">
             <div>
-              <h2>Daftar Alumni— {batch?.label}</h2>
+              <h2>Daftar Alumni — {batch?.label}</h2>
               <p>
                 Lulus tahun {batch?.tahun} · {studentsByBatch.length} alumni
               </p>
@@ -163,63 +149,29 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           </div>
 
           {/* ========================================== */}
-          {/* ===== SLIDE FOTO ===== */}
+          {/* ===== SLIDE FOTO (4 SLIDE PER ANGKATAN) ===== */}
           {/* ========================================== */}
           <div className="photo-slide-container">
             <div className="photo-slide-wrapper">
               <button className="slide-btn prev" onClick={prevSlide}>
                 ❮
               </button>
-
               <div className="photo-slide">
                 {isLoading ? (
                   <div className="slide-loading">
                     <div className="spinner"></div>
                     <span className="loading-text">Memuat foto...</span>
                   </div>
-                ) : imageError ? (
-                  <div className="slide-loading">
-                    <span style={{ fontSize: '40px' }}>⚠️</span>
-                    <span className="loading-text">Gagal memuat gambar</span>
-                    <button
-                      onClick={() => {
-                        setIsLoading(true);
-                        setImageError(false);
-                        const img = new Image();
-                        img.src = photoSlides[currentSlide];
-                        img.onload = () => setIsLoading(false);
-                        img.onerror = () => {
-                          setIsLoading(false);
-                          setImageError(true);
-                        };
-                      }}
-                      style={{
-                        padding: '6px 20px',
-                        borderRadius: '6px',
-                        border: 'none',
-                        background: '#c9a96e',
-                        color: 'white',
-                        cursor: 'pointer',
-                        fontWeight: '600',
-                        fontSize: '13px',
-                        marginTop: '4px',
-                      }}>
-                      Coba Lagi
-                    </button>
-                  </div>
                 ) : (
                   <img
                     src={photoSlides[currentSlide]}
                     alt={`Slide ${currentSlide + 1}`}
-                    loading="lazy"
                   />
                 )}
-
                 <div className="slide-counter">
                   {currentSlide + 1} / {photoSlides.length}
                 </div>
               </div>
-
               <button className="slide-btn next" onClick={nextSlide}>
                 ❯
               </button>
@@ -227,7 +179,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           </div>
 
           {/* ========================================== */}
-          {/* ===== FlipHTML5 ===== */}
+          {/* ===== FlipHTML5 (UNTUK ANGKATAN YANG ADA) ===== */}
           {/* ========================================== */}
           {hasFlip && (
             <div className="fliphtml5-container">

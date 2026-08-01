@@ -55,7 +55,7 @@ function App() {
         />
         <meta
           property="og:description"
-          content="Ikatan Alumni SMAIT Bunayya. Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya dari setiap angkatan."
+          content="Ikatan Alumni SMA IT Bunayya kota Tangerang. Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya dari setiap angkatan."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ika-smaitbunayya.web.id" />

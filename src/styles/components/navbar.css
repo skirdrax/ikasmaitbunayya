@@ -1,5 +1,5 @@
 /* ======================================== */
-/* ===== NAVBAR BASE ===== */
+/* ===== NAVBAR ===== */
 /* ======================================== */
 
 header {
@@ -18,8 +18,23 @@ header {
     box-shadow 0.3s ease;
 }
 
-header.nav-hidden {
-  transform: translateY(-100%);
+/* ===== MOBILE HIDE NAVBAR ===== */
+@media (max-width: 900px) {
+  header.nav-hidden {
+    transform: translateY(-100%);
+  }
+}
+
+/* ===== WEB TETAP ===== */
+@media (min-width: 901px) {
+  header {
+    position: fixed;
+    top: 0;
+    transform: translateY(0) !important;
+  }
+  header.nav-hidden {
+    transform: translateY(0) !important;
+  }
 }
 
 .navbar {
@@ -119,10 +134,6 @@ header.nav-hidden {
   gap: 16px;
 }
 
-/* ======================================== */
-/* ===== TOMBOL SARAN & MASUKAN ===== */
-/* ======================================== */
-
 .btn-report {
   background: transparent;
   color: var(--forest);
@@ -173,7 +184,7 @@ header.nav-hidden {
 }
 
 /* ======================================== */
-/* ===== NAVBAR TRANSPARAN DI BERANDA ===== */
+/* ===== NAVBAR TRANSPARAN ===== */
 /* ======================================== */
 
 header.transparent {
@@ -220,7 +231,7 @@ header.transparent .btn-report:hover {
 }
 
 /* ======================================== */
-/* ===== NAVBAR SAAT SCROLL (PUTIH) ===== */
+/* ===== NAVBAR SCROLL ===== */
 /* ======================================== */
 
 header.scrolled {
@@ -268,7 +279,7 @@ header.scrolled .btn-report:hover {
 }
 
 /* ======================================== */
-/* ===== MOBILE ONLY ===== */
+/* ===== MOBILE ===== */
 /* ======================================== */
 
 @media (max-width: 900px) {

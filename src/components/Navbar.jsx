@@ -13,15 +13,11 @@ export default function Navbar({ onSaranClick }) {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
 
-      // Cek apakah halaman di-scroll lebih dari 50px (untuk background solid)
       setScrolled(currentScrollY > 50);
 
-      // Logika Sembunyi / Munculkan Navbar saat Scroll
       if (currentScrollY > lastScrollY && currentScrollY > 100 && !isOpen) {
-        // Scroll ke BAWAH -> Sembunyikan navbar (kecuali jika menu mobile sedang terbuka)
         setVisible(false);
       } else {
-        // Scroll ke ATAS -> Tampilkan navbar
         setVisible(true);
       }
 

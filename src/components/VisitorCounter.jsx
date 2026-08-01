@@ -3,7 +3,7 @@ export default function VisitorCounter() {
     <div className="visitor-counter-wrapper">
       {/* ===== BARIS ATAS: LABEL ===== */}
       <div className="visitor-label-row">
-        <span>Pengunjung</span>
+        <span>Pengunjung Website IKA Smait Bunayya</span>
       </div>
 
       {/* ===== BARIS BAWAH: BADGE ===== */}

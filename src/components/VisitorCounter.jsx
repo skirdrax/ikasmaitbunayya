@@ -1,9 +1,13 @@
 export default function VisitorCounter() {
   return (
     <div className="visitor-counter-wrapper">
-      {/* ===== VIEW TOTAL ===== */}
-      <div className="visitor-item">
-        <span className="visitor-label">Total</span>
+      {/* ===== KIRI: LABEL ===== */}
+      <div className="visitor-label">
+        <span>Pengunjung</span>
+      </div>
+
+      {/* ===== KANAN: BADGE ===== */}
+      <div className="visitor-badge">
         <a
           href="https://visitorbadge.io/status?path=ika-smaitbunayya.web.id"
           target="_blank"
@@ -11,7 +15,7 @@ export default function VisitorCounter() {
           className="visitor-badge-link">
           <img
             src="https://api.visitorbadge.io/api/visitors?path=ika-smaitbunayya.web.id&label=View%20Total&labelColor=%23697689&countColor=%23263759&style=plastic&labelStyle=none"
-            alt="View Total"
+            alt="Visitor Counter"
           />
         </a>
       </div>

@@ -37,6 +37,8 @@
 /* ===== SISANYA TETAP SAMA PERSIS ===== */
 .hero-content {
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
@@ -44,7 +46,7 @@
   line-height: 1.12;
   font-weight: 700;
   margin: 0 auto;
-  color: #ffffff; /* ← UBAH JADI PUTIH biar jelas di atas gambar */
+  color: #ffffff;
 }
 .hero h1 .accent {
   color: var(--orange);
@@ -55,7 +57,7 @@
   margin: 20px auto 0;
   font-size: 18px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.9); /* ← PUTIH TRANSPARAN */
+  color: rgba(255, 255, 255, 0.9);
   max-width: 600px;
 }
 
@@ -72,7 +74,6 @@
 /* ===== COUNTERS DI HERO ===== */
 /* ======================================== */
 
-/* ===== COUNTERS ===== */
 .counters {
   margin-top: 48px;
   display: grid;
@@ -83,7 +84,6 @@
   margin-right: auto;
 }
 
-/* ===== COUNTER CARDS DI HERO (DENGAN BACKGROUND GELAP) ===== */
 .hero .counter-card {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
@@ -117,7 +117,6 @@
 }
 
 /* ===== COUNTER CARDS DI LUAR HERO (PUTIH) ===== */
-/* Ini untuk kalo ada counter di tempat lain */
 .counter-card {
   background: #f8f8f8;
   border-radius: var(--radius-lg);
@@ -146,12 +145,17 @@
   font-weight: 500;
   color: var(--ink-soft);
 }
+
+/* ======================================== */
 /* ===== SEARCH WRAPPER & BAR ===== */
+/* ======================================== */
+
 .search-wrapper {
   position: relative;
   margin: 0 auto 32px;
   max-width: 580px;
   width: 100%;
+  z-index: 10;
 }
 
 .search-bar {
@@ -228,7 +232,10 @@
   transform: scale(0.97);
 }
 
-/* ===== SEARCH SUGGESTIONS ===== */
+/* ======================================== */
+/* ===== SEARCH SUGGESTIONS - PALING ATAS ===== */
+/* ======================================== */
+
 .search-suggestions {
   position: absolute;
   top: calc(100% + 10px);
@@ -240,7 +247,7 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-  z-index: 50;
+  z-index: 9999 !important; /* ← PALING ATAS */
   max-height: 380px;
   overflow-y: auto;
   text-align: left;
@@ -359,7 +366,11 @@
   background: var(--gold);
   border-radius: 999px;
 }
-/* ===== COUNTERS ===== */
+
+/* ======================================== */
+/* ===== COUNTERS (DUPLIKAT) ===== */
+/* ======================================== */
+
 .counters {
   margin-top: 48px;
   display: grid;
@@ -396,7 +407,10 @@
   color: var(--ink-soft);
 }
 
+/* ======================================== */
 /* ===== POPUP NOT FOUND ===== */
+/* ======================================== */
+
 .popup-notfound {
   position: fixed;
   top: 0;

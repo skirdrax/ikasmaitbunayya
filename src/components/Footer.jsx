@@ -1,3 +1,5 @@
+import VisitorCounter from './VisitorCounter';
+
 export default function Footer() {
   return (
     <footer id="kontak">
@@ -54,7 +56,12 @@ export default function Footer() {
           <h5>Kontak</h5>
           <a href="mailto:tu@smaitbunayya.sch.id">smaitbunayya.sch.id</a>
           <a href="tel:0218765432">000000000</a>
-          <a href="#"> Kota Tangerang</a>
+          <a href="#">Kota Tangerang</a>
+        </div>
+
+        {/* ===== VISITOR COUNTER ===== */}
+        <div className="footer-col visitor-col">
+          <VisitorCounter />
         </div>
       </div>
 

@@ -23,6 +23,10 @@ export default function KampusAlumni() {
       logo: '/assets/kampus/UNJ.png',
     },
     {
+      nama: 'Universitas Negeri Semarang',
+      logo: '/assets/kampus/UNNES.png',
+    },
+    {
       nama: 'Universitas Sultan Ageng Tirtayasa',
       logo: '/assets/kampus/UNTIRTA.png',
     },
@@ -56,6 +60,11 @@ export default function KampusAlumni() {
       logo: '/assets/kampus/UINP.png',
     },
     {
+      nama: 'UIN Salatiga',
+      logo: '/assets/kampus/UINS.png',
+    },
+
+    {
       nama: 'Politeknik Negeri Indramayu',
       logo: '/assets/kampus/POLINDRA.png',
     },
@@ -73,6 +82,11 @@ export default function KampusAlumni() {
     },
 
     {
+      nama: 'Politeknik Negeri Banyuwangi',
+      logo: '/assets/kampus/POLIWANGI.png',
+    },
+
+    {
       nama: 'Universitas Pertamina',
       logo: '/assets/kampus/UPER.png',
     },
@@ -85,12 +99,21 @@ export default function KampusAlumni() {
       logo: '/assets/kampus/UP.png',
     },
     {
+      nama: 'Universitas Ahmad Dahlan',
+      logo: '/assets/kampus/UAD.png',
+    },
+
+    {
       nama: 'Universitas Esa Unggul',
       logo: '/assets/kampus/EU.png',
     },
     {
       nama: 'Global Institute University',
       logo: '/assets/kampus/GLO.png',
+    },
+    {
+      nama: 'Universitas Terbuka',
+      logo: '/assets/kampus/UT.png',
     },
     {
       nama: 'Politeknik Kirana',

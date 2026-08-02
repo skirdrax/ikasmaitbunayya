@@ -8,6 +8,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
   // ===== STATE UNTUK SLIDE FOTO =====
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // ===== STATE UNTUK FULLSCREEN BTS =====
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -79,37 +80,48 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
 
   // ===== SEMBUNYIKAN NAVBAR SAAT OVERLAY TERBUKA =====
   useEffect(() => {
-    // Tambahkan class ke body
     document.body.classList.add('overlay-open');
-
     return () => {
       document.body.classList.remove('overlay-open');
     };
   }, []);
 
-  // ===== PRELOAD FOTO SAAT SLIDE BERUBAH =====
+  // ===== PRELOAD FOTO SAAT SLIDE BERUBAH (DENGAN LOADING) =====
   useEffect(() => {
     const img = new Image();
     img.src = photoSlides[currentSlide];
+
     img.onload = () => {
       setIsLoading(false);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
     };
+
     img.onerror = () => {
       setIsLoading(false);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 300);
     };
   }, [currentSlide, photoSlides]);
 
-  // ===== FUNGSI SLIDE =====
+  // ===== FUNGSI SLIDE (DENGAN CEK LOADING) =====
   const nextSlide = () => {
+    if (isTransitioning || isLoading) return;
+    setIsLoading(true);
+    setIsTransitioning(true);
     setCurrentSlide((prev) => (prev + 1) % photoSlides.length);
   };
 
   const prevSlide = () => {
+    if (isTransitioning || isLoading) return;
+    setIsLoading(true);
+    setIsTransitioning(true);
     setCurrentSlide(
       (prev) => (prev - 1 + photoSlides.length) % photoSlides.length,
     );
   };
-
   // ===== FUNGSI FULLSCREEN =====
   const toggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);
@@ -159,11 +171,15 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
           </div>
 
           {/* ========================================== */}
-          {/* ===== SLIDE FOTO (4 SLIDE PER ANGKATAN) ===== */}
+          {/* ===== SLIDE FOTO ===== */}
           {/* ========================================== */}
           <div className="photo-slide-container">
             <div className="photo-slide-wrapper">
-              <button className="slide-btn prev" onClick={prevSlide}>
+              <button
+                className="slide-btn prev"
+                onClick={prevSlide}
+                disabled={isTransitioning || isLoading}
+                style={{ opacity: isTransitioning || isLoading ? 0.5 : 1 }}>
                 ❮
               </button>
               <div className="photo-slide">
@@ -182,7 +198,11 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
                   {currentSlide + 1} / {photoSlides.length}
                 </div>
               </div>
-              <button className="slide-btn next" onClick={nextSlide}>
+              <button
+                className="slide-btn next"
+                onClick={nextSlide}
+                disabled={isTransitioning || isLoading}
+                style={{ opacity: isTransitioning || isLoading ? 0.5 : 1 }}>
                 ❯
               </button>
             </div>

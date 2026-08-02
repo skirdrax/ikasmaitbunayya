@@ -41,8 +41,8 @@ export const pins = [
   },
   {
     city: 'Jawa Barat',
-    top: '77%',
-    left: '29%',
+    top: '74%',
+    left: '30%',
     topMobile: '68%',
     leftMobile: '25%',
     count: 5,

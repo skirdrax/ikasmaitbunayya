@@ -12,8 +12,8 @@ export const pins = [
 
   {
     city: 'Lampung',
-    top: '68%',
-    left: '22%',
+    top: '64%',
+    left: '21%',
     topMobile: '60%',
     leftMobile: '12%',
     count: 4,

@@ -27,7 +27,7 @@ export const pins = [
     topMobile: '67%',
     leftMobile: '16%',
     count: 15,
-    campus: 'Untirta, Esa Unggul, Global Institute, PoliKirana, & bekerja',
+    campus: 'Untirta, Esa Unggul, Global Institute, PoliKirana, UT,& bekerja',
   },
 
   {
@@ -54,8 +54,8 @@ export const pins = [
     left: '33%',
     topMobile: '70%',
     leftMobile: '30%',
-    count: 7,
-    campus: 'UNS, Unsoed, UIN Purwokerto, Telkom',
+    count: 8,
+    campus: 'UNS, Unnes, Unsoed, UIN Purwokerto, Telkom, UAD',
   },
   {
     city: 'Jawa Timur',
@@ -63,8 +63,8 @@ export const pins = [
     left: '37%',
     topMobile: '71%',
     leftMobile: '37%',
-    count: 1,
-    campus: 'Unbraw ',
+    count: 2,
+    campus: 'Unbraw & Poliwangi',
   },
 ];
 // ============ DATA ANGKATAN ============

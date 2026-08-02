@@ -54,9 +54,22 @@ export default function Footer() {
 
         <div className="footer-col">
           <h5>Kontak</h5>
-          <a href="mailto:tu@smaitbunayya.sch.id">smaitbunayya.sch.id</a>
-          <a href="tel:0218765432">000000000</a>
-          <a href="#">Kota Tangerang</a>
+          <a
+            href="https://smait.sekolahbunayya.sch.id"
+            target="_blank"
+            rel="noopener noreferrer">
+            smaitbunayya.sch.id
+          </a>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfpKxR1NuxYIAbZan9sGvDkyNFGYhLY_2zmzJn3_NTrJi0kDw/viewform"
+            target="_blank"
+            rel="noopener noreferrer">
+            PPDB SMAIT Bunayya
+          </a>
+          <a href="#">
+            Jl. Raya Villa Tangerang Indah, RT.003/RW.011, Periuk, Kec. Periuk,
+            Kota Tangerang, Banten 15131
+          </a>
         </div>
 
         {/* ===== VISITOR COUNTER ===== */}

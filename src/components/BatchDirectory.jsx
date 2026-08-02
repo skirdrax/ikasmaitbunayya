@@ -58,6 +58,7 @@ export default function BatchDirectory({ onSelectBatch }) {
                   {isLoading && (
                     <div className="batch-photo-loading">
                       <div className="batch-spinner"></div>
+                      <span>Memuat Foto angkatan.. harap sabar</span>
                     </div>
                   )}
 

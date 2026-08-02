@@ -27,7 +27,7 @@ export default function Hero({ onSearchResult }) {
   }, []);
 
   useEffect(() => {
-    const targetAlumni = 40;
+    const targetAlumni = 45;
     const targetpt = 25;
     const targetKota = 15;
 

@@ -55,7 +55,7 @@ export const pins = [
     topMobile: '70%',
     leftMobile: '30%',
     count: 8,
-    campus: 'UNS, Unnes, Unsoed, UIN Purwokerto, Telkom, UAD',
+    campus: 'UNS, Unnes, Unsoed, UIN Purwokerto, UIN Salatiga, Telkom, UAD',
   },
   {
     city: 'Jawa Timur',

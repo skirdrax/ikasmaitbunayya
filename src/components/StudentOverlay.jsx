@@ -217,9 +217,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
                 <h3>{currentFlip.title}</h3>
                 <p>
                   jika ada iklan..Klik tombol ⛶ untuk memperbesar ke fullscreen.
-                  Tekan ESC untuk menutup fullscreen. Klik tombol ✕ untuk{' '}
-                  <men></men>
-                  close iklan
+                  Klik tombol ✕ untuk close iklan
                 </p>
               </div>
               <div className="fliphtml5-wrapper">

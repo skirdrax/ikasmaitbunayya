@@ -16,22 +16,22 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
   // ===== DATA FOTO PER ANGKATAN (4 SLIDE MASING-MASING) =====
   const photoData = {
     1: [
-      '/assets/angkatan1/1.jpg',
-      '/assets/angkatan1/2.jpg',
-      '/assets/angkatan1/3.jpg',
-      '/assets/angkatan1/4.jpg',
+      '/assets/angkatan1/1.webp',
+      '/assets/angkatan1/2.webp',
+      '/assets/angkatan1/3.webp',
+      '/assets/angkatan1/4.webp',
     ],
     2: [
-      '/assets/angkatan2/1.jpg',
-      '/assets/angkatan2/2.jpg',
-      '/assets/angkatan2/3.jpg',
-      '/assets/angkatan2/4.jpg',
+      '/assets/angkatan2/1.webp',
+      '/assets/angkatan2/2.webp',
+      '/assets/angkatan2/3.webp',
+      '/assets/angkatan2/4.webp',
     ],
     3: [
-      '/assets/angkatan3/1.jpg',
-      '/assets/angkatan3/2.jpg',
-      '/assets/angkatan3/3.jpg',
-      '/assets/angkatan3/4.jpg',
+      '/assets/angkatan3/1.webp',
+      '/assets/angkatan3/2.webp',
+      '/assets/angkatan3/3.webp',
+      '/assets/angkatan3/4.webp',
     ],
     4: [
       'https://picsum.photos/seed/angkatan4_1/800/500',

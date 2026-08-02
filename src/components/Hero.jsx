@@ -29,7 +29,7 @@ export default function Hero({ onSearchResult }) {
   useEffect(() => {
     const targetAlumni = 40;
     const targetpt = 25;
-    const targetKota = 11;
+    const targetKota = 15;
 
     const observer = new IntersectionObserver(
       (entries) => {

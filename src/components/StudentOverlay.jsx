@@ -216,7 +216,7 @@ export default function StudentOverlay({ batchId, onBack, onSelectStudent }) {
               <div className="fliphtml5-header">
                 <h3>{currentFlip.title}</h3>
                 <p>
-                  Jika ada iklan..klik di pojok kanan bawah untuk full size dan
+                  Jika ada iklan..klik di pojok kanan bawah untuk full size
                   close iklan
                 </p>
               </div>

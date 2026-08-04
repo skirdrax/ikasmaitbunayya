@@ -44,10 +44,10 @@ function App() {
     <>
       {/* ===== SEO & SOCIAL SHARE ===== */}
       <Helmet>
-        <title>IKA SMA IT Bunayya - Ikatan Alumni SMA IT Bunayya</title>
+        <title>IKA SMAIT Bunayya - Ikatan Alumni SMA IT Bunayya</title>
         <meta
           name="description"
-          content="Ikatan Alumni SMAIT Bunayya. Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya dari setiap angkatan. sekolah di Kota tangerang, Banten, Indonesia. SMAIT Bunayya adalah sekolah Islam Terpadu yang mengedepankan pendidikan karakter dan akademik."
+          content="Ikatan Alumni SMAIT Bunayya. Wadah silaturahmi, kolaborasi, dan kontribusi alumni SMA IT Bunayya dari setiap angkatan. sekolah di Kota tangerang, Banten, Indonesia."
         />
         <meta
           name="keywords"

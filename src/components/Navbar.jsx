@@ -73,11 +73,6 @@ export default function Navbar({ onSaranClick }) {
       className={`${scrolled ? 'scrolled' : ''} ${!visible ? 'nav-hidden' : ''}`}>
       <nav className="navbar">
         <div className="logo">
-          <div className="logo-mark">
-            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-              <path d="M12 2L14.5 8.5L21 9.3L16 13.8L17.5 20.5L12 17L6.5 20.5L8 13.8L3 9.3L9.5 8.5Z" />
-            </svg>
-          </div>
           <div>
             IKA SMA IT BUNAYYA
             <small>Ikatan Keluarga Alumni SMA IT BUNAYYA</small>

@@ -52,7 +52,7 @@ export default function PopupNotification() {
           pengertiannya.
         </p>
         <button className="popup-btn" onClick={handleClose}>
-          Mengerti, Saya Tahu
+          Mengerti
         </button>
       </div>
     </div>

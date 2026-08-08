@@ -37,8 +37,8 @@ export default function PopupNotification() {
         <div className="popup-icon"></div>
         <h3 className="popup-title">Selamat Datang di IKA SMA IT Bunayya</h3>
         <p className="popup-text">
-          Mohon maaf jika performa website tidak optimal. Kami berkomitmen untuk
-          bisa website dengan performa terbaik.
+          Mohon maaf jika performa website kurang optimal. Kami berkomitmen
+          untuk bisa website dengan performa terbaik.
         </p>
 
         <p className="popup-text">

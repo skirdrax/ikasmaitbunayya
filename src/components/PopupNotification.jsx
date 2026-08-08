@@ -44,8 +44,8 @@ export default function PopupNotification() {
           <strong>pengembangan lanjutan</strong>.
           <br />
           <br />
-          Mohon maaf jika ada perubahan atau perbaikan fitur secara berkala.
-          Kami berkomitmen untuk bisa website dengan performa terbaik.
+          Mohon maaf jika performa website tidak optimal. Kami berkomitmen untuk
+          bisa website dengan performa terbaik.
         </p>
         <button className="popup-btn" onClick={handleClose}>
           Mengerti, Saya Tahu

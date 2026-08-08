@@ -47,6 +47,11 @@ export default function PopupNotification() {
           Mohon maaf jika performa website tidak optimal. Kami berkomitmen untuk
           bisa website dengan performa terbaik.
         </p>
+
+        <p className="popup-text">
+          Silahkan klik tombol di bawah untuk menutup notifikasi ini. Terima
+          kasih atas pengertiannya.
+        </p>
         <button className="popup-btn" onClick={handleClose}>
           Mengerti, Saya Tahu
         </button>

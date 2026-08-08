@@ -449,7 +449,7 @@ export const students = [
     kampus: 'Universitas Terbuka',
     kota: '-',
     angkatan: 2026,
-    foto: 'https://ui-avatars.com/api/?name=Berliana+Al+Hanun&background=1A4D3E&color=F7F5F0&size=160',
+    foto: 'https://ui-avatars.com/api/?name=Berliana+Al+AHanun&background=1A4D3E&color=F7F5F0&size=160',
   },
   {
     id: 40,

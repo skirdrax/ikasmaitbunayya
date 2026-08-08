@@ -37,13 +37,10 @@ export default function PopupNotification() {
         <div className="popup-icon"></div>
         <h3 className="popup-title">Selamat Datang di IKA SMA IT Bunayya</h3>
         <p className="popup-text">
-          Website IKA SMA IT Bunayya ini masih dalam tahap{' '}
-          <strong>peningkatan stabilitas performa</strong> dan{' '}
-          <strong>pengembangan lanjutan</strong>.
-          <br />
-          <br />
-          Mohon maaf jika performa website tidak optimal. Kami berkomitmen untuk
-          bisa website dengan performa terbaik.
+          Website IKA SMA IT Bunayya ini merupakan website resmi Ikatan Keluarga
+          Alumni SMA IT Bunayya. Website ini Mohon maaf jika performa website
+          tidak optimal. Kami berkomitmen untuk bisa website dengan performa
+          terbaik.
         </p>
 
         <p className="popup-text">

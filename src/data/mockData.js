@@ -380,7 +380,7 @@ export const students = [
   {
     id: 32,
     nama: 'Hafiz Zakhir',
-    jurusan: 'D4 Teknik Rekayasa Pesawat Udara',
+    jurusan: 'D4 Teknologi Rekayasa Perawatan Pesawat Udara',
     kampus: 'Politeknik Kirana',
     kota: 'Tangerang',
     angkatan: 2025,

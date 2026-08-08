@@ -19,6 +19,7 @@
 @import './components/manfaat.css';
 @import './components/marquee.css';
 @import './components/saran.css';
+@import './components/popup.css';
 
 /* ===== BIAR BERANDA MENTOK ATAS ===== */
 #beranda {

@@ -10,6 +10,7 @@ import StudentOverlay from './components/StudentOverlay';
 import ProfileModal from './components/ProfileModal';
 import SaranPage from './components/SaranPage';
 import Footer from './components/Footer';
+import PopupNotification from './components/PopupNotification'; // ← TAMBAH
 import './styles/index.css';
 
 function App() {
@@ -127,6 +128,9 @@ function App() {
           onClose={() => setSelectedStudent(null)}
         />
       )}
+
+      {/* ===== POPUP NOTIFIKASI ===== */}
+      <PopupNotification />
     </>
   );
 }

@@ -40,7 +40,7 @@ export default function PopupNotification() {
         </h3>
         <p className="popup-text">
           Website IKA SMA IT Bunayya ini masih dalam tahap{' '}
-          <strong>stabilitas performa</strong> dan{' '}
+          <strong>peningkatan stabilitas performa</strong> dan{' '}
           <strong>pengembangan lanjutan</strong>.
           <br />
           <br />

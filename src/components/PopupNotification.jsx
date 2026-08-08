@@ -47,8 +47,9 @@ export default function PopupNotification() {
         </p>
 
         <p className="popup-text">
-          Silahkan klik tombol di bawah untuk menutup pop up ini. Terima kasih
-          atas pengertiannya.
+          Silahkan klik tombol di bawah untuk menutup pop up ini untuk
+          menjelajah Website IKA SMA IT Bunayya. Terima kasih atas
+          pengertiannya.
         </p>
         <button className="popup-btn" onClick={handleClose}>
           Mengerti, Saya Tahu

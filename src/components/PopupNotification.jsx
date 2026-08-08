@@ -35,7 +35,7 @@ export default function PopupNotification() {
           ✕
         </button>
         <div className="popup-icon"></div>
-        <h3 className="popup-title">Website Dalam Pengembangan</h3>
+        <h3 className="popup-title">Website meningkatkan performa </h3>
         <p className="popup-text">
           Website IKA SMAIT Bunayya ini masih dalam tahap{' '}
           <strong>stabilitas performa</strong> dan{' '}

@@ -35,9 +35,7 @@ export default function PopupNotification() {
           ✕
         </button>
         <div className="popup-icon"></div>
-        <h3 className="popup-title">
-          Selamat Datang di Website IKA SMA IT Bunayya
-        </h3>
+        <h3 className="popup-title">Selamat Datang di IKA SMA IT Bunayya</h3>
         <p className="popup-text">
           Website IKA SMA IT Bunayya ini masih dalam tahap{' '}
           <strong>peningkatan stabilitas performa</strong> dan{' '}
@@ -49,8 +47,8 @@ export default function PopupNotification() {
         </p>
 
         <p className="popup-text">
-          Silahkan klik tombol di bawah untuk menutup notifikasi ini. Terima
-          kasih atas pengertiannya.
+          Silahkan klik tombol di bawah untuk menutup pop up ini. Terima kasih
+          atas pengertiannya.
         </p>
         <button className="popup-btn" onClick={handleClose}>
           Mengerti, Saya Tahu
